@@ -1,0 +1,7 @@
+.hero-gradient {
+  background: linear-gradient(
+    to bottom right,
+    #000000,      /* black */
+    #312e81       /* indigo‑900 */
+  );
+}

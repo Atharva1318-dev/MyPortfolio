@@ -1,0 +1,11 @@
+@import "tailwindcss";
+*{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;}
+
+.nameSpan{
+      font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}

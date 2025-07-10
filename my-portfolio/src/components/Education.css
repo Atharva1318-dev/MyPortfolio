@@ -1,0 +1,12 @@
+/* Target the vertical line */
+.vertical-timeline::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(49, 46, 129, 1) 20%,
+    rgba(74, 222, 128, 1) 45%,
+    rgba(74, 222, 128, 0) 100%
+  ) !important;
+  width: 4px;              /* adjust thickness if needed */
+  border-radius: 2px;      /* slight rounding for smoothness */
+}
