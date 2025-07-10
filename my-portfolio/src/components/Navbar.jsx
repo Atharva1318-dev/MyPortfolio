@@ -101,7 +101,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <div className="flex-1">
                 <a
                     href="#home"
-                    className="text-xs md:text-lg lg:text-xl md:font-medium text-white hover:text-green-400 transition-colors"
+                    className="text-sm md:text-lg lg:text-xl md:font-medium text-white hover:text-green-400 transition-colors"
                 >
                     &lt; &gt;Atharva Jadhav
                 </a>
