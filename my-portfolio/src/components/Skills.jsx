@@ -42,7 +42,7 @@ const skillsData = {
     },
 };
 
-export default function SkillsSection() {
+export default function SkillsSection({ darkMode }) {
     const [expandedCards, setExpandedCards] = useState([]);
 
     const toggleCard = (category) => {
@@ -53,29 +53,28 @@ export default function SkillsSection() {
         );
     };
 
-    // **Step 1: Convert to array of [category, data] pairs**
     const skillCategories = Object.entries(skillsData);
-    // skillCategories is now:
-    // [
-    //   ["Languages", { icon: Code, color: "...", skills: [...] }],
-    //   ["Frontend", {...}],
-    //   ...
-    // ]
 
     return (
-        <section id="skills" className="min-h-screen py-14 px-6 md:px-12 relative overflow-hidden">
+        <section
+            id="skills"
+            className="min-h-screen py-14 px-6 md:px-12 relative overflow-hidden"
+        >
             <div className="max-w-6xl mx-auto relative">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-2xl md:text-4xl font-bold text-green-400 mb-4">
                         My Skills
                     </h2>
-                    <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                        An overview of my technical skills and proficiency levels across different domains
+                    <p
+                        className={`${darkMode ? "text-gray-300" : "text-gray-700"
+                            } text-lg max-w-2xl mx-auto`}
+                    >
+                        An overview of my technical skills and proficiency levels across
+                        different domains
                     </p>
                 </div>
 
-                {/* Step 2: Map over the saved array */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {skillCategories.map(([category, data]) => {
                         const IconComponent = data.icon;
@@ -84,20 +83,31 @@ export default function SkillsSection() {
                         return (
                             <div
                                 key={category}
-                                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl hover:border-white/20 transition-all duration-300 hover:scale-105 hover:hover:shadow-indigo-900 shadow-md group cursor-pointer"
+                                className={`${darkMode
+                                    ? "bg-white/5 border-white/10 hover:border-white/20"
+                                    : "bg-white/85 border-gray-200 hover:border-gray-400"
+                                    } backdrop-blur-lg border rounded-2xl transition-all duration-300 hover:scale-105 shadow-md group cursor-pointer`}
                                 onClick={() => toggleCard(category)}
                             >
                                 <div className="p-6">
                                     {/* Card Header */}
                                     <div className="flex items-center justify-between mb-6">
                                         <div className="flex items-center gap-3">
-                                            <div className={`p-3 rounded-lg bg-gradient-to-r ${data.color} shadow-lg`}>
+                                            <div
+                                                className={`p-3 rounded-lg bg-gradient-to-r ${data.color} shadow-lg`}
+                                            >
                                                 <IconComponent className="w-6 h-6 text-white" />
                                             </div>
-                                            <h3 className="text-2xl font-bold text-white">{category}</h3>
+                                            <h3
+                                                className={`text-2xl font-bold ${darkMode ? "text-white" : "text-gray-800"
+                                                    }`}
+                                            >
+                                                {category}
+                                            </h3>
                                         </div>
                                         <ChevronDown
-                                            className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
+                                            className={`w-5 h-5 ${darkMode ? "text-gray-400" : "text-gray-600"
+                                                } transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
                                                 }`}
                                         />
                                     </div>
@@ -110,10 +120,25 @@ export default function SkillsSection() {
                                         {data.skills.map((skill, index) => (
                                             <div key={skill.name} className="space-y-2">
                                                 <div className="flex items-center justify-between">
-                                                    <span className="text-gray-200 font-medium">{skill.name}</span>
-                                                    <span className="text-gray-400 text-sm">{skill.level}%</span>
+                                                    <span
+                                                        className={`font-medium ${darkMode ? "text-gray-200" : "text-gray-800"
+                                                            }`}
+                                                    >
+                                                        {skill.name}
+                                                    </span>
+                                                    <span
+                                                        className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"
+                                                            }`}
+                                                    >
+                                                        {skill.level}%
+                                                    </span>
                                                 </div>
-                                                <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
+                                                <div
+                                                    className={`w-full ${darkMode
+                                                        ? "bg-gray-700/50"
+                                                        : "bg-gray-300/70"
+                                                        } rounded-full h-2 overflow-hidden`}
+                                                >
                                                     <div
                                                         className={`h-full bg-gradient-to-r ${data.color} rounded-full transition-all duration-1000 ease-out`}
                                                         style={{
@@ -128,14 +153,16 @@ export default function SkillsSection() {
 
                                     {!isExpanded && (
                                         <div className="mt-4 text-center">
-                                            <span className="text-gray-500 text-sm">
+                                            <span
+                                                className={`text-sm ${darkMode ? "text-gray-500" : "text-gray-500"
+                                                    }`}
+                                            >
                                                 Click to expand and see skill levels
                                             </span>
                                         </div>
                                     )}
                                 </div>
-                                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900  via-green-400 to-indigo-900" />
-
+                                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
                             </div>
                         );
                     })}

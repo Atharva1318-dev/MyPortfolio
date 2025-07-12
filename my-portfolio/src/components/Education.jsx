@@ -1,4 +1,3 @@
-// src/components/EducationTimeline.jsx
 import React from "react";
 import {
     VerticalTimeline,
@@ -31,7 +30,7 @@ const educationData = [
     },
 ];
 
-export default function EducationTimeline() {
+export default function EducationTimeline({ darkMode }) {
     return (
         <section id="education" className="px-2 md:px-8 py-12">
             <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 text-green-400">
@@ -50,31 +49,40 @@ export default function EducationTimeline() {
                             key={idx}
                             date={edu.date}
                             iconStyle={{
-                                background: "linear-gradient(to bottom, #000000, #312e81)",
-                                color: "#fff",
+                                background: darkMode
+                                    ? "linear-gradient(to bottom, #000000, #312e81)"
+                                    : "linear-gradient(to bottom, #e0f2fe, #c7d2fe)",
+                                color: darkMode ? "#fff" : "#000",
                             }}
                             icon={<edu.icon size={20} />}
                             contentStyle={{
-                                background: "linear-gradient(-135deg, rgba(0,0,0,0.6), rgba(49,46,129,0.8))",
-                                color: "#f0fdf4",
-                                boxShadow: "0 3px 6px rgba(0,0,0,0.2)",
+                                background: darkMode
+                                    ? "linear-gradient(-135deg, rgba(0,0,0,0.6), rgba(49,46,129,0.8))"
+                                    : "linear-gradient(-135deg, rgba(255,255,255,0.8), rgba(226,232,240,0.8))",
+                                color: darkMode ? "#f0fdf4" : "#1e293b",
+                                boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
                                 borderRadius: "22px",
                             }}
                             contentArrowStyle={{
-                                borderRight: "7px solid #312e81",
+                                borderRight: darkMode
+                                    ? "7px solid #312e81"
+                                    : "7px solid #c7d2fe",
                             }}
-                            dateClassName="text-teal-400"
+                            dateClassName={darkMode ? "text-teal-400" : "text-blue-500"}
                         >
                             <h3 className="vertical-timeline-element-title text-xl font-semibold">
                                 {edu.title}
                             </h3>
-                            <h4 className="vertical-timeline-element-subtitle text-sm text-gray-400">
+                            <h4
+                                className={`vertical-timeline-element-subtitle text-sm ${darkMode ? "text-gray-400" : "text-gray-700"
+                                    }`}
+                            >
                                 {edu.subtitle}
                             </h4>
                         </VerticalTimelineElement>
                     ))}
                 </motion.div>
             </VerticalTimeline>
-        </section >
+        </section>
     );
 }

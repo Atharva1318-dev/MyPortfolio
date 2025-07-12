@@ -13,15 +13,15 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <div className={darkMode ? "dark container min-w-screen" : "container  min-w-screen"}>
+    <div className={darkMode ? "container min-w-screen bg-gradient-to-br from-black to-indigo-900" : "container min-w-screen bg-gradient-to-br from-sky-100 to-indigo-100"}>
       <FloatingLogos></FloatingLogos>
       <div className="min-h-screen hero-gradient transition-colors">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Hero />
-        <About />
-        <Education />
-        <Skills />
-        <Project />
+        <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
+        <Education darkMode={darkMode} />
+        <Skills darkMode={darkMode} />
+        <Project darkMode={darkMode} />
       </div>
     </div>
   );

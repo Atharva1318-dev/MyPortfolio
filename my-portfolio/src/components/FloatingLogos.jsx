@@ -1,4 +1,3 @@
-// src/components/FloatingLogos.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -40,8 +39,9 @@ export default function FloatingLogos() {
                             style={{
                                 top: `${randomTop}%`,
                                 left: `${randomLeft}%`,
-                                width: "50px",
-                                height: "50px",
+                                width: "42px",
+                                height: "42px",
+                                borderRadius: "10px",
                                 opacity: 0.5,
                             }}
                             animate={{

@@ -20,8 +20,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
         <BoxMUI
             sx={{
                 width: 250,
-                bgcolor: 'rgba(20,20,30,0.9)',
-                color: 'white',
+                bgcolor: darkMode ? 'rgba(20,20,30,0.9)' : 'rgba(255,255,255,0.95)',
+                color: darkMode ? 'white' : '#222',
                 height: '100%',
             }}
             role="presentation"
@@ -33,9 +33,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#about"
-                        className="flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r from-purple-600 to-indigo-900 transition-colors"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
                     >
-                        <User className="w-5 h-5 text-green-400" /> About Me
+                        <User className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> About Me
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
@@ -44,9 +45,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     <a
                         href="/AtharvaJadhav_Resume.pdf"
                         download
-                        className="flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r from-purple-600 to-indigo-900 transition-colors"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
                     >
-                        <FileText className="w-5 h-5 text-green-400" /> Resume
+                        <FileText className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Resume
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
@@ -54,9 +56,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#projects"
-                        className="flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r from-purple-600 to-indigo-900 transition-colors"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
                     >
-                        <Box className="w-5 h-5 text-green-400" /> Projects
+                        <Box className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Projects
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
@@ -64,9 +67,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#skills"
-                        className="flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r from-purple-600 to-indigo-900 transition-colors"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
                     >
-                        <Code2 className="w-5 h-5 text-green-400" /> Skills
+                        <Code2 className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Skills
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
@@ -74,9 +78,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#education"
-                        className="flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r from-purple-600 to-indigo-900 transition-colors"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
                     >
-                        <BookOpen className="w-5 h-5 text-green-400" /> Education
+                        <BookOpen className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Education
                     </a>
                 </ListItem>
             </List>
@@ -84,7 +89,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {/* Mobile Dark/Light Switch */}
             <div className="pt-4 border-t border-gray-700 mt-4">
                 <div className="flex items-center justify-between px-3">
-                    <span className="text-white text-sm">{darkMode ? 'Dark Mode' : 'Light Mode'}</span>
+                    <span className={`${darkMode ? 'text-white' : 'text-gray-800'} text-sm`}>
+                        {darkMode ? 'Dark Mode' : 'Light Mode'}
+                    </span>
                     <Switch
                         checked={darkMode}
                         onChange={() => setDarkMode(!darkMode)}
@@ -96,19 +103,26 @@ export default function Navbar({ darkMode, setDarkMode }) {
     );
 
     return (
-        <nav className="navbar sticky top-2 z-50 backdrop-blur-sm bg-black/50 rounded-2xl mx-2 px-4 py-4 flex items-center border-transparent border-b-indigo-800">
+        <nav
+            className={`navbar sticky top-2 z-50 backdrop-blur-sm ${darkMode ? 'bg-black/50 border-b-indigo-700' : 'bg-white/20 border-b-green-200'
+                } rounded-2xl mx-2 px-4 py-4 flex items-center border-b-2`}
+        >
             {/* Left: Name */}
             <div className="flex-1">
                 <a
                     href="#home"
-                    className="text-sm md:text-lg lg:text-xl md:font-medium text-white hover:text-green-400 transition-colors"
+                    className={`text-sm md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
+                        } hover:text-green-400 transition-colors`}
                 >
                     &lt; &gt;Atharva Jadhav
                 </a>
             </div>
 
             {/* Center (desktop only): Links */}
-            <div className="hidden md:flex flex-1 justify-center space-x-8 text-white">
+            <div
+                className={`hidden md:flex flex-1 justify-center space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'
+                    }`}
+            >
                 <a href="#about" className="hover:text-green-400 transition-colors">
                     About
                 </a>
@@ -141,11 +155,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     />
                 </div>
 
-
                 {/* Mobile hamburger */}
                 <div className="md:hidden">
                     <Button onClick={toggleDrawer(true)}>
-                        <Menu className="text-white" />
+                        <Menu className={`${darkMode ? 'text-white' : 'text-gray-900'}`} />
                     </Button>
                     <Drawer
                         anchor="right"

@@ -2,28 +2,38 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function HeroWithStats() {
+export default function About({ darkMode }) {
 
     const meRef = useRef(null);
 
     useGSAP(() => {
         gsap.to(meRef.current, {
-            y: -9,         // float up by 10px
-            duration: 2,    // seconds per float cycle
+            y: -9,
+            duration: 2,
             yoyo: true,
             repeat: -1,
             ease: "sine.inOut",
         });
     }, []);
+
     return (
-        <div id="about" className=" text-white">
-            <h2 className="text-green-400 text-center text-2xl md:text-3xl font-bold mb-8">About Me</h2>
+        <div id="about" className={darkMode ? "text-white" : "text-gray-900"}>
+            <h2 className="text-green-400 text-center text-2xl md:text-3xl font-bold mb-8">
+                About Me
+            </h2>
             <div className="container mx-auto px-6 py-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
+
                     {/* Profile Image */}
                     <div className="flex justify-center lg:justify-start">
                         <div className="relative">
-                            <div className="w-45 h-45 md:w-85 md:h-85 bg-gradient-to-br from-gray-700 to-gray-800 transform rotate-45 rounded-3xl overflow-hidden" ref={meRef}>
+                            <div
+                                className={`w-45 h-45 md:w-85 md:h-85 bg-gradient-to-br ${darkMode
+                                    ? "from-gray-700 to-gray-800"
+                                    : "from-gray-200 to-gray-300"
+                                    } transform rotate-45 rounded-3xl overflow-hidden`}
+                                ref={meRef}
+                            >
                                 <div className="w-full h-full transform -rotate-45 scale-150 translate-y-8">
                                     <img
                                         src="/me.jpeg"
@@ -40,20 +50,17 @@ export default function HeroWithStats() {
 
                     {/* Content */}
                     <div className="self-start">
-                        <div className="font-mono text-gray-400">
+                        <div
+                            className={`font-mono ${darkMode ? "text-gray-400" : "text-gray-600"
+                                }`}
+                        >
                             {"<span>"} Hey, I'm John {"</span>"}
                         </div>
 
-                        {/* <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                            Senior <span className="text-green-400 font-mono">{"{"}</span>
-                            <span className="text-green-400">Full Stack</span>
-                            <span className="text-green-400 font-mono">{"}"}</span>
-                            <br />
-                            Web & App Developer
-                            <span className="text-green-400">_</span>
-                        </h1> */}
-
-                        <div className="text-gray-400 font-mono text-sm leading-relaxed">
+                        <div
+                            className={`font-mono text-sm leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-700"
+                                }`}
+                        >
                             {"<p>"} With expertise in cutting-edge technologies such as{" "}
                             <span className="text-blue-400">NodeJS</span>,{" "}
                             <span className="text-blue-400">React</span>,{" "}

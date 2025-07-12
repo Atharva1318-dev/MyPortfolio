@@ -1,16 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
-export default function MyProjects() {
+export default function MyProjects({ darkMode }) {
     const [hovered, setHovered] = useState(null);
 
-    // create refs for each video
     const video1Ref = useRef(null);
     const video2Ref = useRef(null);
     const video3Ref = useRef(null);
     const video4Ref = useRef(null);
 
-    // set playback speed once videos mount
     useEffect(() => {
         [video1Ref, video2Ref, video3Ref, video4Ref].forEach((ref) => {
             if (ref.current) ref.current.playbackRate = 1.85;
@@ -22,8 +20,9 @@ export default function MyProjects() {
             <h1 className="text-center text-2xl md:text-4xl font-bold text-green-400 mb-12">
                 My Projects
             </h1>
+
             <div className="max-w-7xl mx-auto space-y-20">
-                {/* Row 1: Video Left, Text Right */}
+                {/* Row 1 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-purple-600/20 to-pink-600/20 group hover:shadow-indigo-900 shadow-md"
@@ -58,36 +57,39 @@ export default function MyProjects() {
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-purple-600/90 text-white rounded-full"
                                 >
-                                    <Github></Github>
+                                    <Github />
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div className="self-start space-y-4 pt-5">
                         <h3 className="text-2xl font-bold text-green-400">Wanderlust</h3>
-                        <p className="text-purple-300 text-sm">January 2025</p>
-                        <p className="text-gray-300">
-                            Wanderlust is a travel property booking website inspired by
-                            Airbnb, designed to offer a seamless platform for users to
-                            create, view, update and delete property listings. The project
-                            features an intuitive interface, interactive maps and a robust
-                            review system.
+                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
+                            January 2025
+                        </p>
+                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+                            Wanderlust is a travel property booking website inspired by Airbnb,
+                            designed to offer a seamless platform for users to create, view,
+                            update and delete property listings. The project features an intuitive
+                            interface, interactive maps and a robust review system.
                         </p>
                     </div>
                 </div>
 
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
-                {/* Row 2: Text Left, Video Right */}
+                {/* Row 2 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start space-y-4 pt-5 lg:order-1 order-2">
                         <h3 className="text-2xl font-bold text-green-400">EasyStock</h3>
-                        <p className="text-purple-300 text-sm">December 2024</p>
-                        <p className="text-gray-300">
-                            EasyStock is a lightweight stock trading website designed for
-                            users to buy and sell stocks seamlessly. It uses MongoDB to store
-                            data dynamically, supporting buy/sell orders, stock details, and
-                            holdings management.
+                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
+                            December 2024
+                        </p>
+                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+                            EasyStock is a lightweight stock trading website designed for users
+                            to buy and sell stocks seamlessly. It uses MongoDB to store data
+                            dynamically, supporting buy/sell orders, stock details, and holdings
+                            management.
                         </p>
                     </div>
                     <div
@@ -123,7 +125,7 @@ export default function MyProjects() {
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-purple-600/90 text-white rounded-full"
                                 >
-                                    <Github></Github>
+                                    <Github />
                                 </a>
                             </div>
                         </div>
@@ -132,7 +134,7 @@ export default function MyProjects() {
 
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
-                {/* Row 3: Video Left, Text Right */}
+                {/* Row 3 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-purple-600/20 to-pink-600/20 group hover:shadow-indigo-900 shadow-md"
@@ -167,7 +169,7 @@ export default function MyProjects() {
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-purple-600/90 text-white rounded-full"
                                 >
-                                    <Github></Github>
+                                    <Github />
                                 </a>
                             </div>
                         </div>
@@ -176,24 +178,29 @@ export default function MyProjects() {
                         <h3 className="text-2xl font-bold text-green-400">
                             EduWorld All-in-One Digital Campus Platform
                         </h3>
-                        <p className="text-purple-300 text-sm">April 2025</p>
-                        <p className="text-gray-300">
-                            EduWorld unifies essential campus services. Built on MERN with
-                            Tailwind & Material UI, featuring JWT auth, Cloudinary storage,
-                            and Twilio integration.
+                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
+                            April 2025
+                        </p>
+                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+                            EduWorld unifies essential campus services. Built on MERN with Tailwind &
+                            Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration.
                         </p>
                     </div>
                 </div>
 
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
-                {/* Row 4: Text Left, Video Right */}
+                {/* Row 4 */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start pt-10 space-y-4 lg:order-1 order-2">
                         <h3 className="text-2xl font-bold text-green-400">Razer redesigned</h3>
-                        <p className="text-purple-300 text-sm">March 2025</p>
-                        <p className="text-gray-300">
-                            Reimagined landing page for Razer – designed as part of the MockUpp 2.0 frontend hackathon at my college. The challenge was to transform a landing page into an immersive brand experience.
+                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
+                            March 2025
+                        </p>
+                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+                            Reimagined landing page for Razer – designed as part of the MockUpp 2.0
+                            frontend hackathon at my college. The challenge was to transform a landing
+                            page into an immersive brand experience.
                         </p>
                     </div>
                     <div
@@ -229,7 +236,7 @@ export default function MyProjects() {
                                     rel="noopener noreferrer"
                                     className="px-4 py-2 bg-purple-600/90 text-white rounded-full"
                                 >
-                                    <Github></Github>
+                                    <Github />
                                 </a>
                             </div>
                         </div>
