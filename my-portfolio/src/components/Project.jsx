@@ -1,13 +1,58 @@
 import { useState, useRef, useEffect } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 
 export default function MyProjects({ darkMode }) {
     const [hovered, setHovered] = useState(null);
+    const sectionRef = useRef(null);
+
 
     const video1Ref = useRef(null);
     const video2Ref = useRef(null);
     const video3Ref = useRef(null);
     const video4Ref = useRef(null);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useGSAP(() => {
+
+        // this will combine all the elements having .left class into an array and then apply gsap for each of them
+        gsap.utils.toArray(".left").forEach((elem) => {
+            gsap.from(elem, {
+                x: -200,
+                opacity: 0,
+                duration: 1.6,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 60%",
+                    end: "bottom 50%",
+                    scrub: true,
+                    toggleActions: "play none none reverse",
+                },
+            });
+        });
+
+        // this will combine all the elements having .right class into an array and then apply gsap for each of them
+        gsap.utils.toArray(".right").forEach((elem) => {
+            gsap.from(elem, {
+                x: 200,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 80%",
+                    end: "bottom 70%",
+                    scrub: true,
+                    toggleActions: "play none none reverse",
+                },
+            });
+        });
+    }, []);
 
     useEffect(() => {
         [video1Ref, video2Ref, video3Ref, video4Ref].forEach((ref) => {
@@ -16,14 +61,21 @@ export default function MyProjects({ darkMode }) {
     }, []);
 
     return (
-        <section id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-center text-2xl md:text-4xl font-bold text-green-400 mb-12">
+        <section ref={sectionRef} id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <h1 className="text-center text-2xl md:text-4xl font-bold text-green-400 mb-4">
                 My Projects
             </h1>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <p
+                className={`${darkMode ? "text-gray-300 text-center" : "text-gray-700 text-center"
+                    } text-lg max-w-2xl mx-auto mb-8`}
+            >
+                A showcase of my hands-on web applications and demos
+            </p>
 
             <div className="max-w-7xl mx-auto space-y-20">
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-purple-600/20 to-pink-600/20 group hover:shadow-indigo-900 shadow-md"
                         onMouseEnter={() => setHovered(1)}
@@ -79,7 +131,7 @@ export default function MyProjects({ darkMode }) {
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
                 {/* Row 2 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start space-y-4 pt-5 lg:order-1 order-2">
                         <h3 className="text-2xl font-bold text-green-400">EasyStock</h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
@@ -135,7 +187,7 @@ export default function MyProjects({ darkMode }) {
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
                 {/* Row 3 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-purple-600/20 to-pink-600/20 group hover:shadow-indigo-900 shadow-md"
                         onMouseEnter={() => setHovered(3)}
@@ -191,7 +243,7 @@ export default function MyProjects({ darkMode }) {
                 <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
 
                 {/* Row 4 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start pt-10 space-y-4 lg:order-1 order-2">
                         <h3 className="text-2xl font-bold text-green-400">Razer redesigned</h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>

@@ -11,9 +11,10 @@ import javaLogo from "../assets/logos/java.png";
 import tailwindLogo from "../assets/logos/tailwind.svg";
 import bootLogo from "../assets/logos/boot.svg.png";
 import pythonLogo from "../assets/logos/Python.png";
-import gsapLogo from "../assets/logos/gsap.webp"
+import gsapLogo from "../assets/logos/gsap.webp";
+import gitLogo from "../assets/logos/git.png";
 
-const logos = [gsapLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo];
+const logos = [gsapLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo];
 
 export default function FloatingLogos() {
     return (
@@ -42,7 +43,7 @@ export default function FloatingLogos() {
                                 width: "42px",
                                 height: "42px",
                                 borderRadius: "10px",
-                                opacity: 0.5,
+                                opacity: 0.57,
                             }}
                             animate={{
                                 x: [0, driftX, 0, -driftX, 0],

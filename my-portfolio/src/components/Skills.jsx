@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Code, Palette, Server, Wrench, ChevronDown } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 const skillsData = {
     Languages: {
         icon: Code,
         color: "from-emerald-500 to-teal-600",
+        lightModeBg: "bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200",
         skills: [
             { name: "Python", level: 50 },
             { name: "JavaScript", level: 65 },
@@ -15,6 +19,7 @@ const skillsData = {
     Frontend: {
         icon: Palette,
         color: "from-blue-500 to-cyan-600",
+        lightModeBg: "bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200",
         skills: [
             { name: "React.js", level: 75 },
             { name: "HTML5", level: 85 },
@@ -25,6 +30,7 @@ const skillsData = {
     Backend: {
         icon: Server,
         color: "from-purple-500 to-pink-600",
+        lightModeBg: "bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200",
         skills: [
             { name: "Node.js", level: 75 },
             { name: "Express.js", level: 75 },
@@ -35,6 +41,7 @@ const skillsData = {
     "Other Tools": {
         icon: Wrench,
         color: "from-orange-500 to-red-600",
+        lightModeBg: "bg-gradient-to-br from-orange-50 to-red-50 border-orange-200",
         skills: [
             { name: "Git & GitHub", level: 85 },
             { name: "GSAP", level: 70 },
@@ -44,6 +51,24 @@ const skillsData = {
 
 export default function SkillsSection({ darkMode }) {
     const [expandedCards, setExpandedCards] = useState([]);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useGSAP(() => {
+        gsap.from(".fadeIn", {
+            y: 40,
+            opacity: 0,
+            duration: 0.2,
+            ease: "power1.in",
+            scrollTrigger: {
+                scroller: 'body',
+                trigger: "#skills",
+                start: "top 44%",
+                end: "top 10%",
+                scrub: true
+            }
+        })
+    })
 
     const toggleCard = (category) => {
         setExpandedCards((prev) =>
@@ -63,9 +88,10 @@ export default function SkillsSection({ darkMode }) {
             <div className="max-w-6xl mx-auto relative">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-2xl md:text-4xl font-bold text-green-400 mb-4">
+                    <h2 className="text-2xl md:text-4xl font-bold text-green-400 mb-3">
                         My Skills
                     </h2>
+                    <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
                     <p
                         className={`${darkMode ? "text-gray-300" : "text-gray-700"
                             } text-lg max-w-2xl mx-auto`}
@@ -83,10 +109,10 @@ export default function SkillsSection({ darkMode }) {
                         return (
                             <div
                                 key={category}
-                                className={`${darkMode
+                                className={`fadeIn  border ${darkMode
                                     ? "bg-white/5 border-white/10 hover:border-white/20"
-                                    : "bg-white/85 border-gray-200 hover:border-gray-400"
-                                    } backdrop-blur-lg border rounded-2xl transition-all duration-300 hover:scale-105 shadow-md group cursor-pointer`}
+                                    : data.lightModeBg
+                                    } backdrop-blur-lg rounded-2xl transition-all duration-300 hover:scale-105 shadow-md group cursor-pointer`}
                                 onClick={() => toggleCard(category)}
                             >
                                 <div className="p-6">

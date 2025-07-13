@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Menu, User, FileText, Box, Code2, BookOpen } from 'lucide-react';
+
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+import { User, FileText, Box, Code2, BookOpen } from 'lucide-react';
 import Switch from '@mui/material/Switch';
 import BoxMUI from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -10,6 +14,16 @@ import Divider from '@mui/material/Divider';
 import "./Navbar.css";
 
 export default function Navbar({ darkMode, setDarkMode }) {
+
+    useGSAP(() => {
+        gsap.from('.nav-links', {
+            y: -70,
+            duration: 0.6,
+            delay: 0.1,
+            stagger: 0.25
+        })
+    }, []);
+
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const toggleDrawer = (open) => () => {
@@ -90,7 +104,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <div className="pt-4 border-t border-gray-700 mt-4">
                 <div className="flex items-center justify-between px-3">
                     <span className={`${darkMode ? 'text-white' : 'text-gray-800'} text-sm`}>
-                        {darkMode ? 'Dark Mode' : 'Light Mode'}
+                        {darkMode ? 'Dark Mode' : 'Dark Mode'}
                     </span>
                     <Switch
                         checked={darkMode}
@@ -104,11 +118,11 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
     return (
         <nav
-            className={`navbar sticky top-2 z-50 backdrop-blur-sm ${darkMode ? 'bg-black/50 border-b-indigo-700' : 'bg-white/20 border-b-green-200'
-                } rounded-2xl mx-2 px-4 py-4 flex items-center border-b-2`}
+            className={`navbar sticky top-2 z-50 ${darkMode ? 'bg-black/50 border-b-indigo-700 backdrop-blur-md' : 'bg-white border-b-green-200'
+                } rounded-2xl mx-2 px-4 py-3 md:py-4 flex items-center border-b-2`}
         >
             {/* Left: Name */}
-            <div className="flex-1">
+            <div className="nav-links flex-1">
                 <a
                     href="#home"
                     className={`text-sm md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
@@ -120,26 +134,31 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
             {/* Center (desktop only): Links */}
             <div
-                className={`hidden md:flex flex-1 justify-center space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'
+                className={`nav-links hidden md:flex flex-1 justify-center space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'
                     }`}
             >
-                <a href="#about" className="hover:text-green-400 transition-colors">
+                <a href="#about" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <User className='w-4 h-4 mr-1' />
                     About
                 </a>
                 <a
                     href="/AtharvaJadhav_Resume.pdf"
                     download
-                    className="hover:text-green-400 transition-colors"
+                    className="nav-links hover:text-green-400 transition-colors flex items-center"
                 >
+                    <FileText className='w-4 h-4 mr-1' />
                     Resume
                 </a>
-                <a href="#projects" className="hover:text-green-400 transition-colors">
+                <a href="#projects" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <Box className='w-4 h-4 mr-1' />
                     Projects
                 </a>
-                <a href="#skills" className="hover:text-green-400 transition-colors">
+                <a href="#skills" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <Code2 className='w-4 h-4 mr-1' />
                     Skills
                 </a>
-                <a href="#education" className="hover:text-green-400 transition-colors">
+                <a href="#education" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <BookOpen className='w-4 h-4 mr-1' />
                     Education
                 </a>
             </div>
@@ -147,7 +166,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {/* Right: Dark Mode Switch + Mobile Menu */}
             <div className="flex-1 flex justify-end items-center space-x-4">
                 {/* MUI Switch */}
-                <div className="hidden md:inline-block">
+                <div className="nav-links hidden md:inline-block">
                     <Switch
                         checked={darkMode}
                         onChange={() => setDarkMode(!darkMode)}
@@ -158,7 +177,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 {/* Mobile hamburger */}
                 <div className="md:hidden">
                     <Button onClick={toggleDrawer(true)}>
-                        <Menu className={`${darkMode ? 'text-white' : 'text-gray-900'}`} />
+                        <i className={`fa-solid fa-ellipsis-vertical ${darkMode ? 'text-white' : 'text-gray-900'}`}></i>
+                        {/* <Menu className={`${darkMode ? 'text-white' : 'text-gray-900'}`} /> */}
                     </Button>
                     <Drawer
                         anchor="right"
@@ -170,6 +190,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     </Drawer>
                 </div>
             </div>
-        </nav>
+        </nav >
     );
 }
