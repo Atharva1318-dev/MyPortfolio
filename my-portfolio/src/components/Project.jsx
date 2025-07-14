@@ -74,7 +74,7 @@ export default function MyProjects({ darkMode }) {
             </p>
 
             <div className="max-w-7xl mx-auto space-y-20">
-                {/* Row 1 */}
+
                 <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-purple-600/20 to-pink-600/20 group hover:shadow-indigo-900 shadow-md"
@@ -151,7 +151,7 @@ export default function MyProjects({ darkMode }) {
                     >
                         <video
                             ref={video2Ref}
-                            src="/EasyStock.mp4"
+                            src="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415554/EasyStock_refoz3.mp4"
                             autoPlay
                             loop
                             muted
@@ -195,7 +195,7 @@ export default function MyProjects({ darkMode }) {
                     >
                         <video
                             ref={video3Ref}
-                            src="/EduWorld.mp4"
+                            src="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415540/EduWorld_oggqfi.mp4"
                             autoPlay
                             loop
                             muted
@@ -262,7 +262,7 @@ export default function MyProjects({ darkMode }) {
                     >
                         <video
                             ref={video4Ref}
-                            src="/razer.mp4"
+                            src="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415538/razer_qs0lod.mp4"
                             autoPlay
                             loop
                             muted

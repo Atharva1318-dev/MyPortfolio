@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import { User, FileText, Box, Code2, BookOpen } from 'lucide-react';
-import Switch from '@mui/material/Switch';
+import { User, FileText, Box, Code2, BookOpen, Moon, Sun } from 'lucide-react';
 import BoxMUI from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -21,7 +20,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             duration: 0.6,
             delay: 0.1,
             stagger: 0.25
-        })
+        });
     }, []);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -104,13 +103,15 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <div className="pt-4 border-t border-gray-700 mt-4">
                 <div className="flex items-center justify-between px-3">
                     <span className={`${darkMode ? 'text-white' : 'text-gray-800'} text-sm`}>
-                        {darkMode ? 'Dark Mode' : 'Dark Mode'}
+                        {darkMode ? 'Dark Mode' : 'Light Mode'}
                     </span>
-                    <Switch
-                        checked={darkMode}
-                        onChange={() => setDarkMode(!darkMode)}
-                        color="success"
-                    />
+                    <button onClick={() => setDarkMode(!darkMode)}>
+                        {darkMode ? (
+                            <Moon className="w-5 h-5 text-green-400" />
+                        ) : (
+                            <Sun className="w-5 h-5 text-yellow-500" />
+                        )}
+                    </button>
                 </div>
             </div>
         </BoxMUI>
@@ -118,17 +119,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
     return (
         <nav
-            className={`navbar sticky top-2 z-50 ${darkMode ? 'bg-black/50 border-b-indigo-700 backdrop-blur-md' : 'bg-white border-b-green-200'
-                } rounded-2xl mx-2 px-4 py-3 md:py-4 flex items-center border-b-2`}
+            className={`backdrop-blur-lg navbar sticky top-2 z-50 ${darkMode ? ' border-b-2 bg-black/50 border-b-indigo-700 backdrop-blur-md' : 'bg-white/50 border-gray-500 shadow-xl'
+                } rounded-2xl mx-2 px-4 py-3.5 md:py-4 flex items-center`}
         >
             {/* Left: Name */}
             <div className="nav-links flex-1">
                 <a
                     href="#home"
-                    className={`text-sm md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
+                    className={`text-xs md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
                         } hover:text-green-400 transition-colors`}
                 >
-                    &lt; &gt;Atharva Jadhav
+                    &lt; &gt; Atharva Jadhav
                 </a>
             </div>
 
@@ -165,20 +166,21 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
             {/* Right: Dark Mode Switch + Mobile Menu */}
             <div className="flex-1 flex justify-end items-center space-x-4">
-                {/* MUI Switch */}
+                {/* Lucide icons instead of MUI Switch */}
                 <div className="nav-links hidden md:inline-block">
-                    <Switch
-                        checked={darkMode}
-                        onChange={() => setDarkMode(!darkMode)}
-                        color="success"
-                    />
+                    <button onClick={() => setDarkMode(!darkMode)}>
+                        {darkMode ? (
+                            <Sun className="w-5 h-5 text-green-400" />
+                        ) : (
+                            <Moon className="w-5 h-5 text-yellow-500" />
+                        )}
+                    </button>
                 </div>
 
                 {/* Mobile hamburger */}
                 <div className="md:hidden">
                     <Button onClick={toggleDrawer(true)}>
                         <i className={`fa-solid fa-ellipsis-vertical ${darkMode ? 'text-white' : 'text-gray-900'}`}></i>
-                        {/* <Menu className={`${darkMode ? 'text-white' : 'text-gray-900'}`} /> */}
                     </Button>
                     <Drawer
                         anchor="right"
@@ -190,6 +192,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     </Drawer>
                 </div>
             </div>
-        </nav >
+        </nav>
     );
 }

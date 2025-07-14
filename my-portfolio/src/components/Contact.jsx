@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 
-export default function ContactMe() {
+export default function ContactMe({ darkMode }) {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -79,46 +79,70 @@ export default function ContactMe() {
     };
 
     return (
-        <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-
+        <div className="container min-h-screen py-16 mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-4 tracking-tight">
+                    <h2
+                        className={`text-3xl md:text-4xl font-bold mb-4 tracking-tight ${darkMode ? "text-green-400" : "text-green-500"
+                            }`}
+                    >
                         Get In Touch
                     </h2>
-                    <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                        I’d love to hear from you. Let’s connect!
+                    <div
+                        className={`w-24 h-0.5 mx-auto mb-6 ${darkMode
+                            ? "bg-gradient-to-r from-green-500 to-indigo-900"
+                            : "bg-gradient-to-r from-blue-500 to-indigo-600"
+                            }`}
+                    ></div>
+                    <p className={`text-xl max-w-2xl mx-auto leading-relaxed ${darkMode ? "text-gray-300" : "text-slate-600"}`}>
+                        I'd love to hear from you. Let's connect!
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Contact Info */}
-                    <div className="space-y-8">
-                        <div className="bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] rounded-2xl p-8 border border-gray-700 hover:border-gray-600 transition-colors duration-300">
-                            <h3 className="text-2xl font-semibold text-white mb-6">{"Let's Connect"}</h3>
+                    <div className="space-y-7">
+                        <div
+                            className={`mx-auto rounded-2xl p-4 border transition-all duration-300 ${darkMode
+                                ? "bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] border-gray-700 hover:border-gray-600"
+                                : "bg-white/80 backdrop-blur-sm border-blue-100/50 shadow-lg shadow-blue-100/20 hover:bg-white/90 hover:shadow-xl hover:shadow-blue-200/30"
+                                }`}
+                        >
+                            <h3 className={`text-2xl font-semibold mb-6 ${darkMode ? "text-white" : "text-green-500"}`}>
+                                {"Let's Connect"}
+                            </h3>
 
                             <div className="space-y-6">
                                 <div className="flex items-center space-x-4 group">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                            />
+                                    <div
+                                        className={`w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${darkMode ? "bg-gradient-to-r from-blue-500 to-purple-600" : "bg-blue-50"
+                                            }`}
+                                    >
+                                        <svg
+                                            className={`w-6 h-6 ${darkMode ? "text-white" : "text-blue-500"}`}
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-gray-400 text-sm">Email</p>
-                                        <p className="text-white font-medium">atharvai2005@gmail.com</p>
+                                        <p className={`text-sm ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Email</p>
+                                        <p className={`font-medium ${darkMode ? "text-white" : "text-blue-600"}`}>atharvai2005@gmail.com</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center space-x-4 group">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div
+                                        className={`w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${darkMode ? "bg-gradient-to-r from-green-500 to-teal-600" : "bg-emerald-50"
+                                            }`}
+                                    >
+                                        <svg
+                                            className={`w-6 h-6 ${darkMode ? "text-white" : "text-emerald-500"}`}
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
                                             <path
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
@@ -128,8 +152,8 @@ export default function ContactMe() {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-gray-400 text-sm">Phone</p>
-                                        <p className="text-white font-medium">+917387241068</p>
+                                        <p className={`text-sm ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Phone</p>
+                                        <p className={`font-medium ${darkMode ? "text-white" : "text-blue-600"}`}>+917387241068</p>
                                     </div>
                                 </div>
 
@@ -137,16 +161,19 @@ export default function ContactMe() {
                                 </div>
                             </div>
 
-                            <div className="mt-8 pt-8 border-t border-gray-700">
-                                <p className="text-gray-400 text-sm mb-4">Follow me on</p>
+                            <div className={`mt-8 pt-8 border-t ${darkMode ? "border-gray-700" : "border-blue-100"}`}>
+                                <p className={`text-sm mb-4 ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Follow me on</p>
                                 <div className="flex space-x-4">
                                     {["GitHub", "LinkedIn", "Twitter"].map((social) => (
                                         <a
                                             key={social}
                                             href="#"
-                                            className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition-all duration-300 transform hover:scale-110"
+                                            className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
+                                                ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
+                                                : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                                }`}
                                         >
-                                            <span className="text-white text-xs font-medium">{social[0]}</span>
+                                            <span className="text-xs font-medium">{social[0]}</span>
                                         </a>
                                     ))}
                                 </div>
@@ -155,11 +182,19 @@ export default function ContactMe() {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] rounded-2xl p-8 border border-gray-700 hover:border-gray-600 transition-colors duration-300">
+                    <div
+                        className={`rounded-2xl p-4 border transition-colors duration-300 ${darkMode
+                            ? "bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] border-gray-700 hover:border-gray-600"
+                            : "bg-gradient-to-br from-white/90 to-blue-50/50 backdrop-blur-sm border-indigo-100/60 shadow-lg shadow-indigo-100/25"
+                            }`}
+                    >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Name */}
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label
+                                    htmlFor="name"
+                                    className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-slate-600"}`}
+                                >
                                     Full Name
                                 </label>
                                 <input
@@ -169,9 +204,15 @@ export default function ContactMe() {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     placeholder="Enter your full name"
-                                    className={`w-full px-4 py-3 bg-black/40 backdrop-blur-sm border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-300 ${errors.name
-                                        ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
-                                        : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 ${darkMode
+                                        ? `bg-black/40 backdrop-blur-sm text-white placeholder-gray-400 ${errors.name
+                                            ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
+                                            : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                        }`
+                                        : `bg-white/70 text-slate-700 placeholder-slate-400 ${errors.name
+                                            ? "border-red-300 focus:ring-red-200/50 focus:border-red-400"
+                                            : "border-slate-200 focus:bg-white focus:border-blue-300 focus:ring-blue-200/50"
+                                        }`
                                         }`}
                                 />
                                 {errors.name && <p className="mt-2 text-sm text-red-400">{errors.name}</p>}
@@ -179,7 +220,10 @@ export default function ContactMe() {
 
                             {/* Email */}
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label
+                                    htmlFor="email"
+                                    className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-slate-600"}`}
+                                >
                                     Email Address
                                 </label>
                                 <input
@@ -189,9 +233,15 @@ export default function ContactMe() {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     placeholder="Enter your email address"
-                                    className={`w-full px-4 py-3 bg-black/40 backdrop-blur-sm border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-300 ${errors.email
-                                        ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
-                                        : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 ${darkMode
+                                        ? `bg-black/40 backdrop-blur-sm text-white placeholder-gray-400 ${errors.email
+                                            ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
+                                            : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                        }`
+                                        : `bg-white/70 text-slate-700 placeholder-slate-400 ${errors.email
+                                            ? "border-red-300 focus:ring-red-200/50 focus:border-red-400"
+                                            : "border-slate-200 focus:bg-white focus:border-blue-300 focus:ring-blue-200/50"
+                                        }`
                                         }`}
                                 />
                                 {errors.email && <p className="mt-2 text-sm text-red-400">{errors.email}</p>}
@@ -199,7 +249,10 @@ export default function ContactMe() {
 
                             {/* Message */}
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                                <label
+                                    htmlFor="message"
+                                    className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-slate-600"}`}
+                                >
                                     Message
                                 </label>
                                 <textarea
@@ -209,9 +262,15 @@ export default function ContactMe() {
                                     value={formData.message}
                                     onChange={handleInputChange}
                                     placeholder="Tell me about your project or just say hello..."
-                                    className={`w-full px-4 py-3 bg-black/40 backdrop-blur-sm border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-300 resize-none ${errors.message
-                                        ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
-                                        : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 resize-none ${darkMode
+                                        ? `bg-black/40 backdrop-blur-sm text-white placeholder-gray-400 ${errors.message
+                                            ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"
+                                            : "border-white/20 focus:border-indigo-400 focus:ring-indigo-400/50"
+                                        }`
+                                        : `bg-white/70 text-slate-700 placeholder-slate-400 ${errors.message
+                                            ? "border-red-300 focus:ring-red-200/50 focus:border-red-400"
+                                            : "border-slate-200 focus:bg-white focus:border-blue-300 focus:ring-blue-200/50"
+                                        }`
                                         }`}
                                 />
                                 {errors.message && <p className="mt-2 text-sm text-red-400">{errors.message}</p>}
@@ -220,7 +279,11 @@ export default function ContactMe() {
                             {/* Submit */}
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] transition-all duration-300"
+                                disabled={isSubmitting}
+                                className={`w-full font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] transition-all duration-300 ${darkMode
+                                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    : "bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 hover:shadow-lg active:from-blue-700 active:to-indigo-800 focus:ring-blue-300/50"
+                                    }`}
                             >
                                 {isSubmitting ? (
                                     <div className="flex items-center justify-center space-x-2">

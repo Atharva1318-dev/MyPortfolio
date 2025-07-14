@@ -35,7 +35,7 @@ export default function Hero({ darkMode }) {
 
 
     return (
-        <div id="home" className="min-h-screen">
+        <div id="home" className="min-h-screen overflow-x-hidden">
             <div className="container mx-auto px-3 py-12">
                 <div className="grid lg:grid-cols-2 gap-y-10 gap-x-24 items-center">
                     {/* Content */}
@@ -47,10 +47,10 @@ export default function Hero({ darkMode }) {
                             className={`text-4xl lg:text-5xl font-semibold leading-tight ${darkMode ? "text-white" : "text-gray-900"
                                 }`}
                         >
-                            <span className={`${darkMode ? "text-green-400" : "text-green-600"} font-mono`}>
+                            <span className={`${darkMode ? "text-green-400" : "text-green-500"} font-mono`}>
                                 {"{"}
                             </span>
-                            <span className="text-green-400">
+                            <span className={`${darkMode ? "text-green-400" : "text-green-500"}`}>
                                 <Typewriter
                                     words={["Full Stack Dev", "CSE @TSEC"]}
                                     cursorColor="green"
@@ -62,7 +62,7 @@ export default function Hero({ darkMode }) {
                                     delaySpeed={1000}
                                 />
                             </span>
-                            <span className={`${darkMode ? "text-green-400" : "text-green-600"} font-mono`}>
+                            <span className={`${darkMode ? "text-green-400" : "text-green-500"} font-mono`}>
                                 {"}"}
                             </span>
                             <br />
@@ -111,10 +111,10 @@ export default function Hero({ darkMode }) {
                     {/* Profile Image */}
                     <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center py-5">
                         <div className="relative">
-                            <div className="w-65 h-65 md:w-full md:h-95 pt-3" ref={avatarRef}>
-                                <div className="w-full h-full transform scale-112">
+                            <div className="w-75 h-75 md:w-full md:h-95 pt-3" ref={avatarRef}>
+                                <div className={`w-full h-full transform scale-112 drop-shadow-lg ${darkMode ? "drop-shadow-indigo-500" : "drop-shadow-sky-500"}`}>
                                     <img
-                                        src="/Firefly_Modern flat vector illustration of a young computer engineering student working on a  141617-Photoroom.png"
+                                        src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
                                         alt="Atharva Jadhav Profile"
                                         className="w-full h-full object-cover"
                                     />
