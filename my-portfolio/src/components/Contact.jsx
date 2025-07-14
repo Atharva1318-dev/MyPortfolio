@@ -1,12 +1,35 @@
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
+import { gsap } from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { duration } from "@mui/material/styles";
 
 export default function ContactMe({ darkMode }) {
+    const gsapRef = useRef(null);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
     });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useGSAP(() => {
+        gsap.from(gsapRef.current, {
+            opacity: 0,
+            y: 20,
+            duration: 1.5,
+            ease: "power1.in",
+            scrollTrigger: {
+                scroller: "body",
+                trigger: "#contact",
+                start: "top 60%",
+                end: "top 35%",
+                scrub: true
+            }
+        })
+    })
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -80,14 +103,14 @@ export default function ContactMe({ darkMode }) {
 
     return (
         <div className="container min-h-screen py-16 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto">
+            <h2
+                className={`text-3xl text-center md:text-4xl font-bold mb-4 tracking-tight ${darkMode ? "text-green-400" : "text-green-500"
+                    }`}
+            >
+                Get In Touch
+            </h2>
+            <div id="contact" ref={gsapRef} className="mx-auto">
                 <div className="text-center mb-16">
-                    <h2
-                        className={`text-3xl md:text-4xl font-bold mb-4 tracking-tight ${darkMode ? "text-green-400" : "text-green-500"
-                            }`}
-                    >
-                        Get In Touch
-                    </h2>
                     <div
                         className={`w-24 h-0.5 mx-auto mb-6 ${darkMode
                             ? "bg-gradient-to-r from-green-500 to-indigo-900"
