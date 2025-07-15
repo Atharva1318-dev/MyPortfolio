@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import reactLogo from "../assets/logos/react.png";
-import jsLogo from "../assets/logos/javascript.png";
-import htmlLogo from "../assets/logos/html5.png";
-import cssLogo from "../assets/logos/css3.svg";
-import mongoLogo from "../assets/logos/mongodb-icon-1.svg";
-import nodeLogo from "../assets/logos/nodejs.png";
-import javaLogo from "../assets/logos/java.png";
-import tailwindLogo from "../assets/logos/tailwind.svg";
-import bootLogo from "../assets/logos/boot.svg.png";
-import pythonLogo from "../assets/logos/Python.png";
-import gsapLogo from "../assets/logos/gsap.webp";
-import gitLogo from "../assets/logos/git.png";
+let reactLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604990/react_oe0be6.png";
+let jsLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/javascript_ev9mvq.png";
+let htmlLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/html5_n8e0nf.png";
+let cssLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/css3_viaqna.svg";
+let mongoLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/mongodb-icon-1_ewaept.svg";
+let nodeLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/nodejs_dzhgc1.png";
+let javaLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/java_ob43or.png";
+let tailwindLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604990/tailwind_hgejgq.svg";
+let bootLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/boot.svg_ggksfp.png";
+let pythonLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/Python_a8kvsd.png";
+let gsapLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/gsap_enssxy.webp";
+let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git_apyqbs.png";
 
 const logos = [reactLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 

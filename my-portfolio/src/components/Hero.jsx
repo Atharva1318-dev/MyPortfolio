@@ -1,5 +1,4 @@
-// src/components/HeroWithStats.jsx
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
