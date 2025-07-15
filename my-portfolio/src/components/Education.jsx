@@ -33,9 +33,9 @@ const educationData = [
 export default function EducationTimeline({ darkMode }) {
     return (
         <section id="education" className="px-2 md:px-8 py-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-center mb-3 text-green-400">
+            <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 Education
-            </h2>
+            </h1>
             <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <p
                 className={`${darkMode ? "text-gray-300 text-center" : "text-gray-700 text-center"

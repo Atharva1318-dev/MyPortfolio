@@ -103,12 +103,11 @@ export default function ContactMe({ darkMode }) {
 
     return (
         <div className="container min-h-screen py-16 mx-auto px-4 sm:px-6 lg:px-8">
-            <h2
-                className={`text-3xl text-center md:text-4xl font-bold mb-4 tracking-tight ${darkMode ? "text-green-400" : "text-green-500"
-                    }`}
+            <h1
+                className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 Get In Touch
-            </h2>
+            </h1>
             <div id="contact" ref={gsapRef} className="mx-auto">
                 <div className="text-center mb-16">
                     <div

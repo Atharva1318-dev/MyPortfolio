@@ -88,9 +88,9 @@ export default function SkillsSection({ darkMode }) {
             <div className="max-w-6xl mx-auto relative">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-2xl md:text-4xl font-bold text-green-400 mb-3">
+                    <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                         My Skills
-                    </h2>
+                    </h1>
                     <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
                     <p
                         className={`${darkMode ? "text-gray-300" : "text-gray-700"

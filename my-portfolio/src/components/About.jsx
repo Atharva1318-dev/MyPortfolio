@@ -45,11 +45,11 @@ export default function About({ darkMode }) {
 
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>
-            <h2
+            <h1
                 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 About Me
-            </h2>
+            </h1>
             <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <div className="container mx-auto px-6 py-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">

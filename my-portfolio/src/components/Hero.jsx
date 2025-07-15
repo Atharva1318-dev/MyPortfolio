@@ -40,7 +40,7 @@ export default function Hero({ darkMode }) {
                 <div className="grid lg:grid-cols-2 gap-y-10 gap-x-24 items-center">
                     {/* Content */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
-                        <div className={`font-mono nameSpan ${darkMode ? "text-gray-400" : "text-gray-700"}`}>
+                        <div className={`font-mono firaCodeFont ${darkMode ? "text-gray-400" : "text-gray-700"}`}>
                             {"<span>"}Hey, I'm Atharva Jadhav{"</span>"}
                         </div>
                         <h1
@@ -70,7 +70,7 @@ export default function Hero({ darkMode }) {
                             <span className={darkMode ? "text-green-400" : "text-green-600"}>_</span>
                         </h1>
                         <div
-                            className={`font-mono text-sm leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-gray-700"
+                            className={`firaCodeFont text-sm leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-gray-700"
                                 }`}
                         >
                             {"<p>"} I enjoy building full‑stack web applications and writing clean, readable code. I’ve explored the{" "}
