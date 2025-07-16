@@ -115,7 +115,7 @@ export default function MyProjects({ darkMode }) {
                         </div>
                     </div>
                     <div className="self-start space-y-4 pt-5">
-                        <h3 className="text-2xl font-bold text-green-400">Wanderlust</h3>
+                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>Wanderlust</h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
                             January 2025
                         </p>
@@ -133,7 +133,7 @@ export default function MyProjects({ darkMode }) {
                 {/* Row 2 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start space-y-4 pt-5 lg:order-1 order-2">
-                        <h3 className="text-2xl font-bold text-green-400">EasyStock</h3>
+                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>EasyStock</h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
                             December 2024
                         </p>
@@ -227,7 +227,7 @@ export default function MyProjects({ darkMode }) {
                         </div>
                     </div>
                     <div className="self-start pt-5 space-y-4">
-                        <h3 className="text-2xl font-bold text-green-400">
+                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>
                             EduWorld All-in-One Digital Campus Platform
                         </h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
@@ -245,7 +245,7 @@ export default function MyProjects({ darkMode }) {
                 {/* Row 4 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="self-start pt-10 space-y-4 lg:order-1 order-2">
-                        <h3 className="text-2xl font-bold text-green-400">Razer redesigned</h3>
+                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>Razer redesigned</h3>
                         <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
                             March 2025
                         </p>
