@@ -14,7 +14,7 @@ let pythonLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/
 let gsapLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/gsap_enssxy.webp";
 let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git_apyqbs.png";
 
-const logos = [reactLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
+const logos = [reactLogo, javaLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
 export default function FloatingLogos({ darkMode }) {
     return (
@@ -35,12 +35,12 @@ export default function FloatingLogos({ darkMode }) {
                         key={i}
                         src={src}
                         alt="Tech Logo"
-                        className="absolute"
+                        className="absolute w-[30px] h-[30px] md:w-[45px] md:h-[45px] lg:w-[52px] lg:h-[52px]"
                         style={{
                             top: `${randomTop}%`,
                             left: `${randomLeft}%`,
-                            width: "45px",
-                            height: "45px",
+                            // width: "44px",
+                            // height: "44px",
                             borderRadius: "12px",
                             opacity: darkMode ? 0.58 : 0.75,
                         }}

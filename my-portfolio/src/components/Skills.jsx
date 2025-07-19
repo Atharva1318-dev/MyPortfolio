@@ -188,7 +188,7 @@ export default function SkillsSection({ darkMode }) {
                                         </div>
                                     )}
                                 </div>
-                                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
+                                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "hidden"}`} />
                             </div>
                         );
                     })}
