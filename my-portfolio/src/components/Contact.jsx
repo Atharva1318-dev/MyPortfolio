@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { Instagram, Linkedin, GithubIcon, Mail } from 'lucide-react';
 import { duration } from "@mui/material/styles";
 
 export default function ContactMe({ darkMode }) {
@@ -137,16 +138,10 @@ export default function ContactMe({ darkMode }) {
                             <div className="space-y-6">
                                 <div className="flex items-center space-x-4 group">
                                     <div
-                                        className={`w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${darkMode ? "bg-gradient-to-r from-blue-500 to-purple-600" : "bg-blue-50"
+                                        className={`w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300  text-2xl ${darkMode ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white" : "bg-blue-50 text-blue-600"
                                             }`}
                                     >
-                                        <svg
-                                            className={`w-6 h-6 ${darkMode ? "text-white" : "text-blue-500"}`}
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                        </svg>
+                                        <Mail />
                                     </div>
                                     <div>
                                         <p className={`text-sm ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Email</p>
@@ -186,18 +181,33 @@ export default function ContactMe({ darkMode }) {
                             <div className={`mt-8 pt-8 border-t ${darkMode ? "border-gray-700" : "border-blue-100"}`}>
                                 <p className={`text-sm mb-4 ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Follow me on</p>
                                 <div className="flex space-x-4">
-                                    {["GitHub", "LinkedIn", "Twitter"].map((social) => (
-                                        <a
-                                            key={social}
-                                            href="#"
-                                            className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
-                                                ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
-                                                : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
-                                                }`}
-                                        >
-                                            <span className="text-xs font-medium">{social[0]}</span>
-                                        </a>
-                                    ))}
+                                    <a
+                                        href="#"
+                                        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
+                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
+                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            }`}
+                                    >
+                                        <Linkedin />
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
+                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
+                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            }`}
+                                    >
+                                        <GithubIcon />
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
+                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
+                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            }`}
+                                    >
+                                        <Instagram />
+                                    </a>
                                 </div>
                             </div>
                         </div>

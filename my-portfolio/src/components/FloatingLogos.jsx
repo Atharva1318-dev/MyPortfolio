@@ -35,7 +35,7 @@ export default function FloatingLogos({ darkMode }) {
                         key={i}
                         src={src}
                         alt="Tech Logo"
-                        className="absolute w-[30px] h-[30px] md:w-[45px] md:h-[45px] lg:w-[52px] lg:h-[52px]"
+                        className="absolute w-[38px] h-[38px] md:w-[45px] md:h-[45px] lg:w-[52px] lg:h-[52px]"
                         style={{
                             top: `${randomTop}%`,
                             left: `${randomLeft}%`,

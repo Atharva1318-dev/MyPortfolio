@@ -128,7 +128,7 @@ export default function MyProjects({ darkMode }) {
                     </div>
                 </div>
 
-                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
+                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 2 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -184,7 +184,7 @@ export default function MyProjects({ darkMode }) {
                     </div>
                 </div>
 
-                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
+                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 3 */}
                 <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -240,7 +240,7 @@ export default function MyProjects({ darkMode }) {
                     </div>
                 </div>
 
-                <hr className="visible md:hidden w-3/4 h-0.5 mx-auto bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" />
+                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 4 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
