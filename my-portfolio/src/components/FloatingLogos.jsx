@@ -16,7 +16,7 @@ let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git
 
 const logos = [reactLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
-export default function FloatingLogos() {
+export default function FloatingLogos({ darkMode }) {
     return (
         <div className="min-h-screen fixed inset-0 z-0 overflow-x-hidden">
             {logos.map((src, i) => {
@@ -39,10 +39,10 @@ export default function FloatingLogos() {
                         style={{
                             top: `${randomTop}%`,
                             left: `${randomLeft}%`,
-                            width: "42px",
-                            height: "42px",
-                            borderRadius: "10px",
-                            opacity: 0.61,
+                            width: "45px",
+                            height: "45px",
+                            borderRadius: "12px",
+                            opacity: darkMode ? 0.58 : 0.75,
                         }}
                         animate={{
                             x: [0, driftX, 0, -driftX, 0],

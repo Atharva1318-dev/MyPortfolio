@@ -111,7 +111,7 @@ export default function Hero({ darkMode }) {
                     <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center py-5">
                         <div className="relative">
                             <div className="w-75 h-75 md:w-full md:h-95 pt-3" ref={avatarRef}>
-                                <div className={`w-full h-full transform scale-112 drop-shadow-lg ${darkMode ? "drop-shadow-indigo-500" : "drop-shadow-sky-500"}`}>
+                                <div className={`w-full h-full transform scale-112 drop-shadow-lg ${darkMode ? "drop-shadow-indigo-600" : "drop-shadow-sky-500"}`}>
                                     <img
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
                                         alt="Atharva Jadhav Profile"

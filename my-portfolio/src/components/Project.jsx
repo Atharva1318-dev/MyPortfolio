@@ -83,7 +83,7 @@ export default function MyProjects({ darkMode }) {
                     >
                         <video
                             ref={video1Ref}
-                            src="/wanderlust-demo.mp4"
+                            src="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752906607/Screen_Recording_2025-07-19_at_11_pmirwm.mp4"
                             autoPlay
                             loop
                             muted

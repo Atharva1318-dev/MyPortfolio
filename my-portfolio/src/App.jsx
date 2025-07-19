@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2900); // adjust time as needed
+    }, 3200); // adjust time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,7 +28,8 @@ function App() {
           src="https://lottie.host/ecb36bc5-ec37-452c-b483-a550d8582032/0SJ1wf8sW2.lottie"
           autoplay
           loop
-          style={{ width: 400, height: 400 }}
+          // style={{ width: 400, height: 400 }}
+          className="md:w-[400px] md:h-[400px] w-60 h-60"
         />
       </div>
     );
@@ -36,7 +37,7 @@ function App() {
 
   return (
     <div className={darkMode ? "container min-w-screen bg-gradient-to-br from-black to-indigo-900" : "container min-w-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50"}>
-      <FloatingLogos></FloatingLogos>
+      <FloatingLogos darkMode={darkMode}></FloatingLogos>
       <div className="relative z-10 min-h-screen hero-gradient transition-colors">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Hero darkMode={darkMode} />

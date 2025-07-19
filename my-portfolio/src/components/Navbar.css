@@ -2,6 +2,6 @@
   position:sticky !important;
   border-width: 0.85px !important;
   overflow: hidden;
-   background: rgba(0, 0, 0, 0.19); /*gradient behind shows through */
+  /* background: ; /*gradient behind shows through */
   /* remove any generic border */
 }
