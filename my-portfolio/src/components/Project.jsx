@@ -3,6 +3,7 @@ import { ExternalLink, Github } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ProjectTextCard from "./ProjectTextCard";
 
 
 export default function MyProjects({ darkMode }) {
@@ -114,36 +115,21 @@ export default function MyProjects({ darkMode }) {
                             </div>
                         </div>
                     </div>
-                    <div className="self-start space-y-4 pt-5">
-                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>Wanderlust</h3>
-                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
-                            January 2025
-                        </p>
-                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
-                            Wanderlust is a travel property booking website inspired by Airbnb,
+                    <ProjectTextCard darkMode={darkMode} Title="Wanderlust" Date="January 2025" Description="                            Wanderlust is a travel property booking website inspired by Airbnb,
                             designed to offer a seamless platform for users to create, view,
                             update and delete property listings. The project features an intuitive
-                            interface, interactive maps and a robust review system.
-                        </p>
-                    </div>
+                            interface, interactive maps and a robust review system."></ProjectTextCard>
                 </div>
 
                 <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 2 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div className="self-start space-y-4 pt-5 lg:order-1 order-2">
-                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>EasyStock</h3>
-                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
-                            December 2024
-                        </p>
-                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
+                    <ProjectTextCard darkMode={darkMode} Title="EasyStock" Date="December 2024" Description="                            Wanderlust is a travel property booking website inspired by Airbnb,
                             EasyStock is a lightweight stock trading website designed for users
                             to buy and sell stocks seamlessly. It uses MongoDB to store data
                             dynamically, supporting buy/sell orders, stock details, and holdings
-                            management.
-                        </p>
-                    </div>
+                            management."></ProjectTextCard>
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-gray-800 to-gray-900 group lg:order-2 order-1 hover:shadow-indigo-900 shadow-md"
                         onMouseEnter={() => setHovered(2)}
@@ -226,35 +212,18 @@ export default function MyProjects({ darkMode }) {
                             </div>
                         </div>
                     </div>
-                    <div className="self-start pt-5 space-y-4">
-                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>
-                            EduWorld All-in-One Digital Campus Platform
-                        </h3>
-                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
-                            April 2025
-                        </p>
-                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
-                            EduWorld unifies essential campus services. Built on MERN with Tailwind &
-                            Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration.
-                        </p>
-                    </div>
+                    <ProjectTextCard darkMode={darkMode} Title="EduWorld All-in-One Digital Campus Platform" Date="April 2025" Description="                            Wanderlust is a travel property booking website inspired by Airbnb,
+                                                        EduWorld unifies essential campus services. Built on MERN with Tailwind &
+                            Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration."></ProjectTextCard>
                 </div>
 
                 <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 4 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div className="self-start pt-10 space-y-4 lg:order-1 order-2">
-                        <h3 className={`text-2xl font-bold ${darkMode ? "text-green-400" : "text-green-500"}`}>Razer redesigned</h3>
-                        <p className={`${darkMode ? "text-purple-300" : "text-purple-800"} text-sm`}>
-                            March 2025
-                        </p>
-                        <p className={`${darkMode ? "text-gray-300" : "text-gray-800"}`}>
-                            Reimagined landing page for Razer – designed as part of the MockUpp 2.0
+                    <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="                            Reimagined landing page for Razer – designed as part of the MockUpp 2.0
                             frontend hackathon at my college. The challenge was to transform a landing
-                            page into an immersive brand experience.
-                        </p>
-                    </div>
+                            page into an immersive brand experience."></ProjectTextCard>
                     <div
                         className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-gray-800 to-gray-900 group lg:order-2 order-1 hover:shadow-indigo-900 shadow-md"
                         onMouseEnter={() => setHovered(4)}

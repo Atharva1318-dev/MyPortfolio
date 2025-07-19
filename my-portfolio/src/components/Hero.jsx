@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import "./Hero.css";
 
 export default function Hero({ darkMode }) {
     const avatarRef = useRef(null);
@@ -50,7 +49,7 @@ export default function Hero({ darkMode }) {
                             <span className={`${darkMode ? "text-green-400" : "text-green-500"} font-mono`}>
                                 {"{"}
                             </span>
-                            <span className={`typewriterCss ${darkMode ? "text-green-400" : "text-green-500"}`}>
+                            <span className={`${darkMode ? "text-green-400" : "text-green-500"}`}>
                                 <Typewriter
                                     words={["Full Stack Dev", "CSE @TSEC"]}
                                     cursorColor="green"

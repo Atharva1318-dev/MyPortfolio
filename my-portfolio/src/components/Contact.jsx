@@ -182,7 +182,7 @@ export default function ContactMe({ darkMode }) {
                                 <p className={`text-sm mb-4 ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Follow me on</p>
                                 <div className="flex space-x-4">
                                     <a
-                                        href="#"
+                                        href="https://www.linkedin.com/in/atharva-jadhav-776894348/"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
                                             ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
                                             : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
@@ -191,7 +191,7 @@ export default function ContactMe({ darkMode }) {
                                         <Linkedin />
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://github.com/Atharva1318-dev"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
                                             ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
                                             : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
@@ -200,7 +200,7 @@ export default function ContactMe({ darkMode }) {
                                         <GithubIcon />
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://www.instagram.com/atharvajadhav13/"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
                                             ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
                                             : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
