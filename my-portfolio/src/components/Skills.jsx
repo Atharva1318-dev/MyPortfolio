@@ -83,7 +83,7 @@ export default function SkillsSection({ darkMode }) {
     return (
         <section
             id="skills"
-            className="min-h-screen py-14 px-6 md:px-12 relative overflow-hidden"
+            className="min-h-screen py-14 px-6 md:px-12 relative overflow-x-hidden"
         >
             <div className="max-w-6xl mx-auto relative">
                 {/* Header */}

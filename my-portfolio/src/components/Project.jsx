@@ -64,7 +64,7 @@ export default function MyProjects({ darkMode }) {
     }, []);
 
     return (
-        <section ref={sectionRef} id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section ref={sectionRef} id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
@@ -77,7 +77,6 @@ export default function MyProjects({ darkMode }) {
             </p>
 
             <div className="max-w-7xl mx-auto space-y-20">
-
                 <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <ProjectVideoCard
                         videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752906607/Screen_Recording_2025-07-19_at_11_pmirwm.mp4"
@@ -99,7 +98,7 @@ export default function MyProjects({ darkMode }) {
 
                 {/* Row 2 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <ProjectTextCard darkMode={darkMode} Title="EasyStock" Date="December 2024" Description="                            Wanderlust is a travel property booking website inspired by Airbnb,
+                    <ProjectTextCard darkMode={darkMode} Title="EasyStock" Date="December 2024" Description="
                             EasyStock is a lightweight stock trading website designed for users
                             to buy and sell stocks seamlessly. It uses MongoDB to store data
                             dynamically, supporting buy/sell orders, stock details, and holdings
@@ -130,7 +129,7 @@ export default function MyProjects({ darkMode }) {
                         playbackRate={1.85}
                         orderNum={1}
                     />
-                    <ProjectTextCard darkMode={darkMode} Title="EduWorld All-in-One Digital Campus Platform" Date="April 2025" Description="                            Wanderlust is a travel property booking website inspired by Airbnb,
+                    <ProjectTextCard darkMode={darkMode} Title="EduWorld All-in-One Digital Campus Platform" Date="April 2025" Description="
                                                         EduWorld unifies essential campus services. Built on MERN with Tailwind &
                             Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration."></ProjectTextCard>
                 </div>
@@ -139,7 +138,7 @@ export default function MyProjects({ darkMode }) {
 
                 {/* Row 4 */}
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="                            Reimagined landing page for Razer – designed as part of the MockUpp 2.0
+                    <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="Reimagined landing page for Razer – designed as part of the MockUpp 2.0
                             frontend hackathon at my college. The challenge was to transform a landing
                             page into an immersive brand experience."></ProjectTextCard>
                     <ProjectVideoCard
