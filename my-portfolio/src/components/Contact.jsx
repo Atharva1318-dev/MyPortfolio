@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Instagram, Linkedin, GithubIcon, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { duration } from "@mui/material/styles";
 
 export default function ContactMe({ darkMode }) {
@@ -103,7 +103,7 @@ export default function ContactMe({ darkMode }) {
     };
 
     return (
-        <div className="container min-h-screen py-16 mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="contact" className="container min-h-screen py-16 mx-auto px-4 sm:px-6 lg:px-8">
             <h1
                 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
@@ -145,7 +145,7 @@ export default function ContactMe({ darkMode }) {
                                     </div>
                                     <div>
                                         <p className={`text-sm ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Email</p>
-                                        <p className={`font-medium ${darkMode ? "text-white" : "text-blue-600"}`}>atharvai2005@gmail.com</p>
+                                        <p className={`font-medium ${darkMode ? "text-white" : "text-blue-600"}`}> <a href="mailto:atharvai2005@gmail.com">atharvai2005@gmail.com</a></p>
                                     </div>
                                 </div>
 
@@ -184,29 +184,32 @@ export default function ContactMe({ darkMode }) {
                                     <a
                                         href="https://www.linkedin.com/in/atharva-jadhav-776894348/"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
-                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
-                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            ? "bg-transparent hover:bg-gradient-to-r hover:bg-gray-100"
+                                            : "bg-transparent hover:bg-blue-100"
                                             }`}
                                     >
-                                        <Linkedin />
+                                        <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989689/linkedin_vkc1nt.svg" className="object-cover w-8 h-8">
+                                        </img>
                                     </a>
                                     <a
                                         href="https://github.com/Atharva1318-dev"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
-                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
-                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            ? "bg-transparent  hover:bg-gradient-to-r hover:bg-black"
+                                            : "bg-transparent  hover:text-blue-600 hover:bg-blue-100"
                                             }`}
                                     >
-                                        <GithubIcon />
+                                        <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989689/github_cgqls4.svg" className="object-cover w-8 h-8">
+                                        </img>
                                     </a>
                                     <a
                                         href="https://www.instagram.com/atharvajadhav13/"
                                         className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${darkMode
-                                            ? "bg-gray-700 text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
-                                            : "bg-slate-100 text-slate-500 hover:text-blue-600 hover:bg-blue-50"
+                                            ? "bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600"
+                                            : "bg-transparent hover:bg-blue-100"
                                             }`}
                                     >
-                                        <Instagram />
+                                        <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/instagram.svg_mdlstf.webp" className="object-cover w-8 h-8">
+                                        </img>
                                     </a>
                                 </div>
                             </div>
@@ -293,7 +296,7 @@ export default function ContactMe({ darkMode }) {
                                     rows={5}
                                     value={formData.message}
                                     onChange={handleInputChange}
-                                    placeholder="Tell me about your project or just say hello..."
+                                    placeholder="Leave your message here"
                                     className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-300 resize-none ${darkMode
                                         ? `bg-black/40 backdrop-blur-sm text-white placeholder-gray-400 ${errors.message
                                             ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400"

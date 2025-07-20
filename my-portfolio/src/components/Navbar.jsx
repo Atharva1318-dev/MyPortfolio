@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import { User, FileText, Box, Code2, BookOpen, Moon, Sun } from 'lucide-react';
+import { User, FileText, Box, Code2, BookOpen, Mail, Moon, Sun } from 'lucide-react';
 import BoxMUI from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -97,6 +97,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         <BookOpen className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Education
                     </a>
                 </ListItem>
+                <Divider className="border-gray-700" />
+
+                <ListItem disablePadding>
+                    <a
+                        href="#contact"
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
+                    >
+                        <Mail className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Contact
+                    </a>
+                </ListItem>
             </List>
 
             {/* Mobile Dark/Light Switch */}
@@ -150,17 +161,21 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     <FileText className='w-4 h-4 mr-1' />
                     Resume
                 </a>
-                <a href="#projects" className="nav-links hover:text-green-400 transition-colors flex items-center">
-                    <Box className='w-4 h-4 mr-1' />
-                    Projects
+                <a href="#education" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <BookOpen className='w-4 h-4 mr-1' />
+                    Education
                 </a>
                 <a href="#skills" className="nav-links hover:text-green-400 transition-colors flex items-center">
                     <Code2 className='w-4 h-4 mr-1' />
                     Skills
                 </a>
-                <a href="#education" className="nav-links hover:text-green-400 transition-colors flex items-center">
-                    <BookOpen className='w-4 h-4 mr-1' />
-                    Education
+                <a href="#projects" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <Box className='w-4 h-4 mr-1' />
+                    Projects
+                </a>
+                <a href="#contact" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                    <Mail className='w-4 h-4 mr-1' />
+                    Contact
                 </a>
             </div>
 

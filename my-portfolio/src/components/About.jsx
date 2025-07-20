@@ -1,5 +1,3 @@
-"use client"
-
 import { useRef } from "react"
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -61,7 +59,7 @@ export default function About({ darkMode }) {
                                     } transform rotate-45 rounded-3xl overflow-hidden`}
                             >
                                 <div className="w-full h-full transform -rotate-45 scale-150 translate-y-8">
-                                    <img src="/me.jpeg" alt="John Dev Profile" className="w-full h-full object-cover" />
+                                    <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/me_xltawb.jpg" alt="John Dev Profile" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                             <div className="absolute -bottom-4 -right-4 bg-green-500 p-3 rounded-lg">
