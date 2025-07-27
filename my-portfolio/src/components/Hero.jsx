@@ -10,7 +10,8 @@ export default function Hero({ darkMode }) {
 
     useGSAP(() => {
         gsap.from(avatarRef.current, {
-            y: -9,
+            scale: 1.02,
+            y: -3,
             duration: 2,
             yoyo: true,
             repeat: -1,

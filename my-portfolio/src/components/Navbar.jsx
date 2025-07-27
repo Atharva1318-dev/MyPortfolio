@@ -133,7 +133,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     return (
         <nav
             className={`backdrop-blur-lg navbar sticky top-2 z-50 ${darkMode ? 'border-b-2 bg-black/50 border-b-indigo-600 backdrop-blur-md' : 'bg-[rgba(0, 0, 0, 0.1)] border-gray-300 shadow-xl'
-                } rounded-2xl mx-2 px-4 py-3.5 md:py-4 flex items-center`}
+                } rounded-2xl mx-2 px-4 py-3.5 md:py-4 flex items-center justify-between`}
         >
             {/* Left: Name */}
             <div className="nav-links flex-1">
