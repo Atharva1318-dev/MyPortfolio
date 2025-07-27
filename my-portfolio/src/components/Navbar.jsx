@@ -38,14 +38,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 height: '100%',
             }}
             role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
             className="p-4 flex flex-col justify-between"
         >
             <List className="space-y-2">
                 <ListItem disablePadding>
                     <a
                         href="#about"
+                        onClick={() => setTimeout(() => setDrawerOpen(false), 200)}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
@@ -69,6 +68,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#projects"
+                        onClick={() => setTimeout(() => setDrawerOpen(false), 200)}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
@@ -80,6 +80,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#skills"
+                        onClick={() => setTimeout(() => setDrawerOpen(false), 200)}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
@@ -91,6 +92,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#education"
+                        onClick={() => setTimeout(() => setDrawerOpen(false), 200)}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
@@ -102,6 +104,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 <ListItem disablePadding>
                     <a
                         href="#contact"
+                        onClick={() => setTimeout(() => setDrawerOpen(false), 200)}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
@@ -112,21 +115,20 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
             {/* Mobile Dark/Light Switch */}
             <div className="pt-4 border-t border-gray-700 mt-4">
-                <div className="flex items-center justify-between px-3">
+                <div className="flex items-center justify-between px-3" onClick={() => setDarkMode(!darkMode)}>
                     <span className={`${darkMode ? 'text-white' : 'text-gray-800'} text-sm`}>
                         {darkMode ? 'Dark Mode' : 'Light Mode'}
                     </span>
-                    <button onClick={() => setDarkMode(!darkMode)}>
-                        {darkMode ? (
-                            <Moon className="w-5 h-5 text-green-400" />
-                        ) : (
-                            <Sun className="w-5 h-5 text-yellow-500" />
-                        )}
-                    </button>
+                    {darkMode ? (
+                        <Moon className="w-5 h-5 text-green-400" />
+                    ) : (
+                        <Sun className="w-5 h-5 text-yellow-500" />
+                    )}
                 </div>
             </div>
         </BoxMUI>
     );
+
 
     return (
         <nav

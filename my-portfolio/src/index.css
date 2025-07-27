@@ -1,4 +1,10 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 *{
   font-family: "Poppins", sans-serif;
   font-style: normal;
