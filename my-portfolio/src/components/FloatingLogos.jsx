@@ -1,5 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 let reactLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604990/react_oe0be6.png";
 let jsLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/javascript_ev9mvq.png";
@@ -16,57 +17,53 @@ let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git
 
 const logos = [reactLogo, javaLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
+
 export default function FloatingLogos({ darkMode }) {
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+        const images = containerRef.current.querySelectorAll("img");
+
+        images.forEach((img) => {
+            const driftX = (Math.random() - 0.5) * 100;
+            const driftY = (Math.random() - 0.5) * 100;
+            const duration = 2 + Math.random() * 10;
+
+            gsap.to(img, {
+                x: `+=${driftX}`,
+                y: `+=${driftY}`,
+                duration: duration,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            gsap.to(img, {
+                rotation: 360,
+                duration: duration * 2,
+                repeat: -1,
+                ease: "linear"
+            });
+        });
+    }, { scope: containerRef });
+
     return (
-        <div className="min-h-screen fixed inset-0 z-0 overflow-x-hidden">
+        <div className="min-h-screen fixed inset-0 z-0 overflow-x-hidden" ref={containerRef}>
             {logos.map((src, i) => {
-                const randomTop = Math.random() * 100;
-                const randomLeft = Math.random() * 100;
-
-                // Random drift range: -50 to +50 px for both axes
-                const driftX = (Math.random() - 0.5) * 100;
-                const driftY = (Math.random() - 0.5) * 100;
-
-                // Random speeds
-                const duration = 4 + Math.random() * 10;
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
 
                 return (
-                    <motion.img
+                    <img
                         key={i}
                         src={src}
                         alt="Tech Logo"
                         className="absolute w-[38px] h-[38px] md:w-[45px] md:h-[45px] lg:w-[52px] lg:h-[52px]"
                         style={{
-                            top: `${randomTop}%`,
-                            left: `${randomLeft}%`,
-                            // width: "44px",
-                            // height: "44px",
-                            borderRadius: "12px",
+                            top: `${top}%`,
+                            left: `${left}%`,
+                            borderRadius: "12.5px",
                             opacity: darkMode ? 0.58 : 0.75,
-                        }}
-                        animate={{
-                            x: [0, driftX, 0, -driftX, 0],
-                            y: [0, driftY, 0, -driftY, 0],
-                            rotate: [0, 360],
-                        }}
-                        transition={{
-                            x: {
-                                duration: duration,
-                                repeat: Infinity,
-                                repeatType: "mirror",
-                                ease: "easeInOut",
-                            },
-                            y: {
-                                duration: duration,
-                                repeat: Infinity,
-                                repeatType: "mirror",
-                                ease: "easeInOut",
-                            },
-                            rotate: {
-                                duration: duration * 2,
-                                repeat: Infinity,
-                                ease: "linear",
-                            },
                         }}
                     />
                 );
