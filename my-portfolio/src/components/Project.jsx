@@ -64,7 +64,7 @@ export default function MyProjects({ darkMode }) {
     }, []);
 
     return (
-        <section ref={sectionRef} id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section ref={sectionRef} id="projects" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>

@@ -37,7 +37,7 @@ export default function Hero({ darkMode }) {
     return (
         <div id="home" className="min-h-screen overflow-x-hidden">
             <div className="container mx-auto px-3 py-12">
-                <div className="grid lg:grid-cols-2 gap-y-10 gap-x-24 items-center">
+                <div className="grid lg:grid-cols-2 gap-y-9 gap-x-24 items-center">
                     {/* Content */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
                         <div className={`font-mono firaCodeFont ${darkMode ? "text-gray-400" : "text-gray-700"}`}>

@@ -83,9 +83,9 @@ export default function SkillsSection({ darkMode }) {
     return (
         <section
             id="skills"
-            className="min-h-screen py-14 px-6 md:px-12 relative overflow-x-hidden"
+            className="min-h-screen py-12 px-6 md:px-12 relative overflow-x-hidden"
         >
-            <div className="max-w-6xl mx-auto relative">
+            <div className="max-w-7xl mx-auto relative">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
