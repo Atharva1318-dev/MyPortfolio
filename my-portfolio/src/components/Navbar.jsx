@@ -132,7 +132,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                             e.preventDefault();
                             setDrawerOpen(false);
                             setTimeout(() => {
-                                document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+                                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                             }, 300); // must match Drawer close animation delay
                         }}
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
