@@ -169,7 +169,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <div className="nav-links flex-1">
                 <a
                     href="#home"
-                    className={`text-xs md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
+                    className={`text-sm md:text-lg lg:text-xl md:font-medium ${darkMode ? 'text-white' : 'text-gray-900'
                         } hover:text-green-400 transition-colors`}
                 >
                     &lt; &gt; Atharva Jadhav
