@@ -77,6 +77,24 @@ export default function MyProjects({ darkMode }) {
             </p>
 
             <div className="max-w-7xl mx-auto space-y-20">
+
+                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <ProjectTextCard darkMode={darkMode} Title="Automated Attendance System (SIH 2025)" Date="September 2025" Description="The Automated Attendance System is an AI-driven solution built for rural schools to simplify daily attendance.
+It uses facial recognition to mark students present from a single group photo, reducing manual effort and errors.
+Teachers can review and verify detected faces before final submission for improved accuracy.
+The platform includes role-based dashboards for teachers, principals, and district officers.
+Built using Flask, OpenCV, Dlib, PostgreSQL, and Twilio, it ensures secure, fast, and reliable attendance management."></ProjectTextCard>
+                    <ProjectVideoCard
+                        videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1764311987/Sih_github_video_qfxrvi.mp4"
+                        liveLink="https://myportfolio-n5v7.onrender.com/"
+                        githubLink="https://github.com/Aarjav05/sih_2025/tree/main"
+                        isHovered={hovered === 2}
+                        setHovered={setHovered}
+                        index={2}
+                        playbackRate={1.05}
+                        orderNum={2}
+                    />
+                </div>
                 <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <ProjectVideoCard
                         videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752906607/Screen_Recording_2025-07-19_at_11_pmirwm.mp4"

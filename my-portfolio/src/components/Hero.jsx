@@ -81,7 +81,7 @@ export default function Hero({ darkMode }) {
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>AI</span>{" "}
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>ML</span> and look forward to explore it as well in the future!{"</p>"}
                         </div>
-                        <div className="flex items-center space-x-4 text-gray-100">
+                        {/* <div className="flex items-center space-x-4 text-gray-100">
                             <div
                                 className="w-6 h-6 rounded text-center text-white"
                                 style={{ backgroundColor: "#082535" }}
@@ -106,7 +106,7 @@ export default function Hero({ darkMode }) {
                             >
                                 N
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* Profile Image */}
                     <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center py-5">

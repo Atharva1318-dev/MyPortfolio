@@ -22,6 +22,7 @@ const skillsData = {
         lightModeBg: "bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200",
         skills: [
             { name: "React.js", level: 75 },
+            { name: "Next.js", level: 50 },
             { name: "HTML5", level: 85 },
             { name: "CSS3", level: 80 },
             { name: "Tailwind CSS", level: 85 },
