@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 let reactLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604990/react_oe0be6.png";
+let nextLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1767245070/nextjs_oeinga.png";
 let jsLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/javascript_ev9mvq.png";
 let htmlLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/html5_n8e0nf.png";
 let cssLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/css3_viaqna.svg";
@@ -15,7 +16,7 @@ let pythonLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/
 let gsapLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/gsap_enssxy.webp";
 let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git_apyqbs.png";
 
-const logos = [reactLogo, javaLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
+const logos = [reactLogo, javaLogo, nextLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, nextLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
 
 export default function FloatingLogos({ darkMode }) {

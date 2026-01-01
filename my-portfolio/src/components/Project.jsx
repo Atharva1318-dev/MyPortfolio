@@ -78,6 +78,24 @@ export default function MyProjects({ darkMode }) {
 
             <div className="max-w-7xl mx-auto space-y-20">
 
+                {/* Row 1 */}
+                <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <ProjectVideoCard
+                        videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1767244587/VectorAI_Github_2_lnxyvb.mp4"
+                        liveLink="https://vector-ai-pi.vercel.app/"
+                        githubLink="https://github.com/Atharva1318-dev/Vector-AI"
+                        isHovered={hovered === 1}
+                        setHovered={setHovered}
+                        index={1}
+                        playbackRate={1.45}
+                        orderNum={1}
+                    />
+                    <ProjectTextCard darkMode={darkMode} Title="VectorAI" Date="December 2025" Description="
+                            VectorAI is a comprehensive career coaching platform designed to help students and professionals navigate their career paths. It leverages the power of Google's Gemini AI to provide personalized resume feedback, technical revision quizzes, and cover letter generation."></ProjectTextCard>
+                </div>
+
+                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
+
                 <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <ProjectTextCard darkMode={darkMode} Title="Automated Attendance System (SIH 2025)" Date="September 2025" Description="The Automated Attendance System is an AI-driven solution built for rural schools to simplify daily attendance.
 It uses facial recognition to mark students present from a single group photo, reducing manual effort and errors.
@@ -114,29 +132,11 @@ Built using Flask, OpenCV, Dlib, PostgreSQL, and Twilio, it ensures secure, fast
 
                 <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
-                {/* Row 2 */}
-                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <ProjectTextCard darkMode={darkMode} Title="EasyStock" Date="December 2024" Description="
-                            EasyStock is a lightweight stock trading website designed for users
-                            to buy and sell stocks seamlessly. It uses MongoDB to store data
-                            dynamically, supporting buy/sell orders, stock details, and holdings
-                            management."></ProjectTextCard>
-                    <ProjectVideoCard
-                        videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415554/EasyStock_refoz3.mp4"
-                        liveLink="https://easy-stock-frontend.onrender.com"
-                        githubLink="https://github.com/Atharva1318-dev/Easy-Stock"
-                        isHovered={hovered === 2}
-                        setHovered={setHovered}
-                        index={2}
-                        playbackRate={1.85}
-                        orderNum={2}
-                    />
-                </div>
-
-                <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
-
                 {/* Row 3 */}
-                <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <ProjectTextCard darkMode={darkMode} Title="EduWorld All-in-One Digital Campus Platform" Date="April 2025" Description="
+                                                        EduWorld unifies essential campus services. Built on MERN with Tailwind &
+                            Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration."></ProjectTextCard>
                     <ProjectVideoCard
                         videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415540/EduWorld_oggqfi.mp4"
                         liveLink="https://eduworld-w2bj.onrender.com"
@@ -147,18 +147,12 @@ Built using Flask, OpenCV, Dlib, PostgreSQL, and Twilio, it ensures secure, fast
                         playbackRate={1.85}
                         orderNum={1}
                     />
-                    <ProjectTextCard darkMode={darkMode} Title="EduWorld All-in-One Digital Campus Platform" Date="April 2025" Description="
-                                                        EduWorld unifies essential campus services. Built on MERN with Tailwind &
-                            Material UI, featuring JWT auth, Cloudinary storage, and Twilio integration."></ProjectTextCard>
                 </div>
 
                 <hr className={`visible md:hidden w-3/4 h-0.5 mx-auto ${darkMode ? "bg-gradient-to-r from-indigo-900 via-green-400 to-indigo-900" : "bg-gradient-to-r from-sky-50 via-sky-100 to-sky-50"}`} />
 
                 {/* Row 4 */}
-                <div className="right grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="Reimagined landing page for Razer – designed as part of the MockUpp 2.0
-                            frontend hackathon at my college. The challenge was to transform a landing
-                            page into an immersive brand experience."></ProjectTextCard>
+                <div className="left grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <ProjectVideoCard
                         videoSrc="https://res.cloudinary.com/dkpgnq7ym/video/upload/v1752415538/razer_qs0lod.mp4"
                         liveLink="https://razer-hackathon-frontend.onrender.com"
@@ -169,6 +163,9 @@ Built using Flask, OpenCV, Dlib, PostgreSQL, and Twilio, it ensures secure, fast
                         playbackRate={1.85}
                         orderNum={2}
                     />
+                    <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="Reimagined landing page for Razer – designed as part of the MockUpp 2.0
+                            frontend hackathon at my college. The challenge was to transform a landing
+                            page into an immersive brand experience."></ProjectTextCard>
                 </div>
             </div>
         </section>
