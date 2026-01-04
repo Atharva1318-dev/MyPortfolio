@@ -3,6 +3,7 @@ import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Code2, Globe, Palette, Trophy } from "lucide-react"
+import { GlowingEffect } from './ui/glowing-effect';
 
 
 export default function About({ darkMode }) {
@@ -44,11 +45,11 @@ export default function About({ darkMode }) {
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>
             <h1
-                className={`text-center text-2xl md:text-4xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
+                className={`text-center text-2xl md:text-4xl font-bold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 About Me
             </h1>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <div className="w-32 h-[1px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <div className="container mx-auto px-6 py-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Profile Image */}
@@ -77,12 +78,19 @@ export default function About({ darkMode }) {
                                     : "bg-white/70 border-blue-100/60 text-gray-700"
                                     }`}
                             >
+                                <GlowingEffect
+                                    spread={40}
+                                    glow={true}
+                                    disabled={false}
+                                    proximity={70}
+                                    inactiveZone={0.01}
+                                />
                                 <p className="text-md leading-relaxed">
                                     Hi, I'm{" "}
                                     <span className={`font-semibold text-lg ${darkMode ? "text-green-400" : "text-green-600"}`}>
                                         Atharva Pramod Jadhav
                                     </span>
-                                    , a second-year Computer Engineering student at{" "}
+                                    , a third-year Computer Engineering student at{" "}
                                     <span className={`font-medium text-lg ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
                                         Thadomal Shahani Engineering College
                                     </span>
@@ -98,6 +106,13 @@ export default function About({ darkMode }) {
                                         : "bg-white/70 border-green-100/60 text-gray-700"
                                         } shadow-[0_3px_6px_rgba(0,0,0,0.1)] backdrop-blur-sm rounded-xl p-5 border`}
                                 >
+                                    <GlowingEffect
+                                        spread={40}
+                                        glow={true}
+                                        disabled={false}
+                                        proximity={70}
+                                        inactiveZone={0.01}
+                                    />
                                     <h3
                                         className={`font-semibold mb-3 flex items-center gap-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
                                     >
@@ -105,13 +120,27 @@ export default function About({ darkMode }) {
                                         Technical Skills
                                     </h3>
                                     <p className="text-sm leading-relaxed">
-                                        I enjoy building full-stack web applications and writing clean, readable code. I've explored the{" "}
+                                        I enjoy building full-stack web applications and writing clean, readable code. I have evolved from the{" "}
                                         <span className={`font-medium ${darkMode ? "text-yellow-400" : "text-yellow-600"}`}>
                                             MERN stack
                                         </span>
-                                        —from <span className={`${darkMode ? "text-blue-400" : "text-blue-600"}`}>React</span> frontends to{" "}
-                                        <span className={`${darkMode ? "text-green-400" : "text-green-600"}`}>Node.js</span> backends and{" "}
-                                        <span className={`${darkMode ? "text-purple-400" : "text-purple-600"}`}>MongoDB</span> databases.
+                                        {" "}to building scalable apps with{" "}
+                                        <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
+                                            Next.js
+                                        </span>
+                                        ,{" "}
+                                        <span className={`font-medium ${darkMode ? "text-purple-400" : "text-purple-600"}`}>
+                                            PostgreSQL
+                                        </span>
+                                        , &{" "}
+                                        <span className={`font-medium ${darkMode ? "text-purple-400" : "text-purple-600"}`}>
+                                            Prisma
+                                        </span>
+                                        . Currently, I am actively exploring{" "}
+                                        <span className={`font-medium ${darkMode ? "text-green-400" : "text-green-600"}`}>
+                                            AI/ML
+                                        </span>
+                                        {" "}integrations.
                                     </p>
                                 </div>
 
@@ -121,6 +150,13 @@ export default function About({ darkMode }) {
                                         : "bg-white/70 border-blue-100/60 text-gray-700"
                                         } shadow-[0_3px_6px_rgba(0,0,0,0.1)] backdrop-blur-sm rounded-xl p-5 border`}
                                 >
+                                    <GlowingEffect
+                                        spread={40}
+                                        glow={true}
+                                        disabled={false}
+                                        proximity={70}
+                                        inactiveZone={0.01}
+                                    />
                                     <h3
                                         className={`font-semibold mb-3 flex items-center gap-2 ${darkMode ? "text-blue-400" : "text-blue-600"}`}
                                     >
@@ -141,6 +177,13 @@ export default function About({ darkMode }) {
                                     : "bg-white/70 border-pink-100/60 text-gray-700"
                                     } backdrop-blur-sm rounded-2xl p-4 border`}
                             >
+                                <GlowingEffect
+                                    spread={40}
+                                    glow={true}
+                                    disabled={false}
+                                    proximity={70}
+                                    inactiveZone={0.01}
+                                />
                                 <h3
                                     className={`font-semibold mb-4 flex items-center gap-2 ${darkMode ? "text-purple-400" : "text-pink-600"}`}
                                 >
@@ -165,6 +208,13 @@ export default function About({ darkMode }) {
                                     : "bg-white/70 border-yellow-100/60 text-gray-700"
                                     } backdrop-blur-sm rounded-2xl p-4 border`}
                             >
+                                <GlowingEffect
+                                    spread={40}
+                                    glow={true}
+                                    disabled={false}
+                                    proximity={70}
+                                    inactiveZone={0.01}
+                                />
                                 <h3
                                     className={`font-semibold mb-4 flex items-center gap-2 ${darkMode ? "text-yellow-400" : "text-yellow-600"}`}
                                 >
