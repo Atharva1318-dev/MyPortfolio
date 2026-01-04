@@ -44,7 +44,7 @@ export default function About({ darkMode }) {
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>
             <h1
-                className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
+                className={`text-center text-2xl md:text-4xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 About Me
             </h1>

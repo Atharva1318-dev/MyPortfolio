@@ -42,9 +42,9 @@ export default function EducationTimeline({ darkMode }) {
         gsap.from(".timeline-entry", {
             y: 50,
             opacity: 0,
-            duration: 0.6,
+            duration: 1,
             ease: "power3.out",
-            stagger: 0.3,
+            stagger: 0.4,
             scrollTrigger: {
                 trigger: timelineRef.current,
                 start: "top 80%",
@@ -63,7 +63,7 @@ export default function EducationTimeline({ darkMode }) {
 
     return (
         <section id="education" className="px-2 md:px-8 py-12">
-            <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+            <h1 className={`text-center text-2xl md:text-4xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 Education
             </h1>
             <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>

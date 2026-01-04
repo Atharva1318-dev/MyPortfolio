@@ -44,7 +44,7 @@ export default function MyProjects({ darkMode }) {
             gsap.from(elem, {
                 x: 200,
                 opacity: 0,
-                duration: 1.2,
+                duration: 1.3,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: elem,
@@ -65,7 +65,7 @@ export default function MyProjects({ darkMode }) {
 
     return (
         <section ref={sectionRef} id="projects" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-            <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+            <h1 className={`text-center text-2xl md:text-4xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
             <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
@@ -161,7 +161,7 @@ Built using Flask, OpenCV, Dlib, PostgreSQL, and Twilio, it ensures secure, fast
                         setHovered={setHovered}
                         index={4}
                         playbackRate={1.85}
-                        orderNum={2}
+                        orderNum={1}
                     />
                     <ProjectTextCard darkMode={darkMode} Title="Razer redesigned" Date="March 2025" Description="Reimagined landing page for Razer – designed as part of the MockUpp 2.0
                             frontend hackathon at my college. The challenge was to transform a landing

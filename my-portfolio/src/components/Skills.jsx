@@ -10,10 +10,9 @@ const skillsData = {
         color: "from-emerald-500 to-teal-600",
         lightModeBg: "bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200",
         skills: [
-            { name: "Python", level: 50 },
-            { name: "JavaScript", level: 65 },
-            { name: "Java", level: 75 },
-            { name: "C", level: 75 },
+            { name: "Java", level: 80 },
+            { name: "Python", level: 75 },
+            { name: "C", level: 70 },
         ],
     },
     Frontend: {
@@ -21,22 +20,23 @@ const skillsData = {
         color: "from-blue-500 to-cyan-600",
         lightModeBg: "bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200",
         skills: [
-            { name: "React.js", level: 75 },
-            { name: "Next.js", level: 50 },
-            { name: "HTML5", level: 85 },
-            { name: "CSS3", level: 80 },
-            { name: "Tailwind CSS", level: 85 },
+            { name: "HTML5 & CSS3", level: 90 },
+            { name: "JavaScript", level: 80 },
+            { name: "React.js", level: 80 },
+            { name: "Next.js", level: 65 },
         ],
     },
     Backend: {
         icon: Server,
-        color: "from-purple-500 to-pink-600",
+        color: "from-purple-500 to-violet-600",
         lightModeBg: "bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200",
         skills: [
             { name: "Node.js", level: 75 },
             { name: "Express.js", level: 75 },
-            { name: "MongoDB", level: 85 },
-            { name: "MySQL", level: 85 },
+            { name: "MongoDB", level: 80 },
+            { name: "PostgreSQL", level: 70 },
+            { name: "MySQL", level: 70 },
+            { name: "Prisma", level: 60 },
         ],
     },
     "Other Tools": {
@@ -44,8 +44,8 @@ const skillsData = {
         color: "from-orange-500 to-red-600",
         lightModeBg: "bg-gradient-to-br from-orange-50 to-red-50 border-orange-200",
         skills: [
-            { name: "Git & GitHub", level: 85 },
-            { name: "GSAP", level: 70 },
+            { name: "Git", level: 85 },
+            { name: "GitHub", level: 85 },
         ],
     },
 };
@@ -59,7 +59,7 @@ export default function SkillsSection({ darkMode }) {
         gsap.from(".fadeIn", {
             y: 40,
             opacity: 0,
-            duration: 0.2,
+            duration: 0.4,
             ease: "power1.in",
             scrollTrigger: {
                 scroller: 'body',
@@ -89,7 +89,7 @@ export default function SkillsSection({ darkMode }) {
             <div className="max-w-7xl mx-auto relative">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className={`text-center text-2xl md:text-3xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+                    <h1 className={`text-center text-2xl md:text-4xl font-bold mb-3 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                         My Skills
                     </h1>
                     <div className="w-24 h-0.5 bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
@@ -116,7 +116,7 @@ export default function SkillsSection({ darkMode }) {
                                     } backdrop-blur-lg rounded-2xl transition-all duration-300 hover:scale-105 shadow-md group cursor-pointer`}
                                 onClick={() => toggleCard(category)}
                             >
-                                <div className="p-6">
+                                <div className="p-4">
                                     {/* Card Header */}
                                     <div className="flex items-center justify-between mb-6">
                                         <div className="flex items-center gap-3">

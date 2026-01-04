@@ -12,7 +12,8 @@ export default function ProjectVideoCard({ videoSrc, liveLink, githubLink, isHov
 
     return (
         <div
-            className="relative overflow-hidden rounded-2xl aspect-video bg-gradient-to-br from-gray-800 to-gray-900 group lg:order-{orderNum} order-1 hover:shadow-indigo-900 shadow-md"
+            className={`relative overflow-hidden rounded-2xl aspect-video bg-gray-900 group lg:order-${orderNum} order-1 
+border border-transparent hover:border-green-500/50 transition-all duration-300 shadow-lg hover:shadow-green-500/20`}
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
         >
