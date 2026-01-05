@@ -18,7 +18,7 @@ const educationData = [
     {
         date: "2023 – 2027",
         title: "Thadomal Shahani Engineering College",
-        subtitle: "B.E. in Computer Engineering — CGPA 9.58",
+        subtitle: "B.E. in Computer Engineering — CGPA 9.53",
         icon: GraduationCap,
     },
     {
