@@ -49,7 +49,7 @@ export default function About({ darkMode }) {
             >
                 About Me
             </h1>
-            <div className="w-24 md:w-32 h-[1px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <div className="w-24 md:w-32 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <div className="container mx-auto px-6 py-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Profile Image */}

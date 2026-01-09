@@ -164,9 +164,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
         <nav
             className={`backdrop-blur-md navbar sticky top-2 z-50 border-b-2
     ${darkMode
-                    ? 'bg-black/50 border-b-indigo-600 backdrop-blur-md'
+                    ? 'bg-black/50 border-b-indigo-700 backdrop-blur-md'
                     : 'bg-[rgba(0,0,0,0.1)] border-gray-300 shadow-xl'}
-    rounded-2xl mx-2 px-4 py-3.5 md:py-4 flex items-center justify-between`}
+    rounded-2xl mx-2 px-3 py-3.5 md:py-4 flex items-center justify-between`}
         >
 
             {/* Left: Name */}
@@ -177,13 +177,12 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         } hover:text-green-400 transition-colors`}
                 >
                     &lt;Atharva Jadhav/&gt;
-
                 </a>
             </div>
 
             {/* Center (desktop only): Links */}
             <div
-                className={`nav-links hidden md:flex flex-1 justify-center space-x-8 ${darkMode ? 'text-white' : 'text-gray-900'
+                className={`nav-links hidden md:flex flex-1 justify-center space-x-10 ${darkMode ? 'text-white' : 'text-gray-900'
                     }`}
             >
                 <a href="#about" className="nav-links hover:text-green-400 transition-colors flex items-center">

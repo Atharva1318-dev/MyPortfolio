@@ -38,8 +38,8 @@ export default function Hero({ darkMode }) {
 
 
     return (
-        <div id="home" className="min-h-screen overflow-x-hidden pt-10 lg:pt-3">
-            <div className="container mx-auto px-3 py-12">
+        <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-3">
+            <div className="container mx-auto px-1 py-12">
                 <div className="grid lg:grid-cols-2 gap-y-9 gap-x-24 items-center">
                     {/* Content */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
@@ -73,12 +73,12 @@ export default function Hero({ darkMode }) {
                             <span className={darkMode ? "text-green-400 heading" : "text-green-600 heading"}>_</span>
                         </h1>
                         <div
-                            className={`firaCodeFont text-sm lg:text-md leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-gray-700"
+                            className={`firaCodeFont text-sm lg:text-md leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-gray-800"
                                 }`}
                         >
                             {"<p>"}I enjoy building{" "}
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>full-stack</span>{" "}
-                            web applications with focus on clean, maintainable code and user experience. I have worked with{" "}
+                            web applications. I have worked with{" "}
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>React</span>,{" "}
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>Next.js</span>, and{" "}
                             <span className={darkMode ? "text-blue-400" : "text-blue-600"}>Node.js</span>, using databases like{" "}
@@ -92,7 +92,7 @@ export default function Hero({ darkMode }) {
                             and love learning new technologies through hands-on projects.{"</p>"}
                         </div>
                         <div className="text-gray-100">
-                            <button className={`inline-flex flex-row items-center justify-evenly relative h-12 overflow-hidden rounded-2xl p-[0.9px] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-lg transition-shadow ${darkMode ? "shadow-green-900/20" : "shadow-green-200"}`}>
+                            <button className={`inline-flex flex-row items-center justify-evenly relative h-12 overflow-hidden rounded-2xl p-[0.8px] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-lg transition-shadow ${darkMode ? "shadow-green-900/20" : "shadow-green-200"}`}>
                                 <span className={`absolute inset-[-1000%] animate-[spin_2s_linear_infinite] ${darkMode
                                     ? "bg-[conic-gradient(from_90deg_at_50%_50%,#4ade80_0%,#312e81_50%,#4ade80_100%)]"
                                     : "bg-[conic-gradient(from_90deg_at_50%_50%,#16a34a_0%,#6366f1_50%,#16a34a_100%)]"

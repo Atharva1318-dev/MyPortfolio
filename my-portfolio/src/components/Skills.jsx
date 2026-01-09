@@ -92,7 +92,7 @@ export default function SkillsSection({ darkMode }) {
                     <h1 className={`text-center text-2xl md:text-4xl font-bold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                         My Skills
                     </h1>
-                    <div className="w-24 md:w-32 h-[1px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+                    <div className="w-24 md:w-32 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
                     <p
                         className={`${darkMode ? "text-gray-300" : "text-gray-700"
                             } text-lg max-w-2xl mx-auto`}
@@ -126,7 +126,7 @@ export default function SkillsSection({ darkMode }) {
                                                 <IconComponent className="w-6 h-6 text-white" />
                                             </div>
                                             <h3
-                                                className={`text-2xl font-bold ${darkMode ? "text-white" : "text-gray-800"
+                                                className={`text-2xl font-semibold ${darkMode ? "text-white" : "text-gray-800"
                                                     }`}
                                             >
                                                 {category}

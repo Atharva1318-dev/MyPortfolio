@@ -16,7 +16,7 @@ let pythonLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604989/
 let gsapLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/gsap_enssxy.webp";
 let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git_apyqbs.png";
 
-const logos = [reactLogo, javaLogo, nextLogo, gsapLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, nextLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
+const logos = [reactLogo, javaLogo, nextLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, nextLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
 
 export default function FloatingLogos({ darkMode }) {

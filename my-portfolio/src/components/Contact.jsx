@@ -110,7 +110,7 @@ export default function ContactMe({ darkMode }) {
                 Get In Touch
             </h1>
             <div
-                className={`w-36 md:w-40 h-[1px] mx-auto mb-6 ${darkMode
+                className={`w-36 md:w-40 h-[0.8px] mx-auto mb-6 ${darkMode
                     ? "bg-gradient-to-r from-green-500 to-indigo-900"
                     : "bg-gradient-to-r from-blue-500 to-indigo-600"
                     }`}
