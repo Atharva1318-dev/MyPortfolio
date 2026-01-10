@@ -118,7 +118,7 @@ export default function Hero({ darkMode }) {
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
                                         alt="Atharva Jadhav Profile"
                                         className="w-full h-full object-contain"
-                                        loading="lazy"
+                                        decoding="async"
                                     />
                                     {/* <img
                                         src="Hero4.png"
