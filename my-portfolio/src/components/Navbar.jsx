@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -24,10 +24,44 @@ export default function Navbar({ darkMode, setDarkMode }) {
     }, []);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState("home");
 
     const toggleDrawer = (open) => () => {
         setDrawerOpen(open);
     };
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            let foundActiveSection = false;
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    setActiveTab(sectionId);
+                    foundActiveSection = true;
+                }
+            });
+            // If no section is in view (hero/home section), reset activeTab
+            if (!foundActiveSection) {
+                setActiveTab("");
+            }
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe all sections
+        const sections = document.querySelectorAll('#about, #education, #skills, #projects, #contact');
+        sections.forEach(section => observer.observe(section));
+
+        return () => {
+            sections.forEach(section => observer.unobserve(section));
+        };
+    }, []);
 
     const list = (
         <BoxMUI
@@ -45,6 +79,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     <a
                         href="#about"
                         onClick={(e) => {
+                            setActiveTab("about");
                             e.preventDefault();
                             setDrawerOpen(false);
                             setTimeout(() => {
@@ -76,6 +111,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         href="#projects"
                         onClick={(e) => {
                             e.preventDefault();
+                            setActiveTab("projects");
                             setDrawerOpen(false);
                             setTimeout(() => {
                                 document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -94,6 +130,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         href="#skills"
                         onClick={(e) => {
                             e.preventDefault();
+                            setActiveTab("skills");
                             setDrawerOpen(false);
                             setTimeout(() => {
                                 document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });
@@ -112,6 +149,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         href="#education"
                         onClick={(e) => {
                             e.preventDefault();
+                            setActiveTab("education");
                             setDrawerOpen(false);
                             setTimeout(() => {
                                 document.querySelector('#education')?.scrollIntoView({ behavior: 'smooth' });
@@ -130,6 +168,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         href="#contact"
                         onClick={(e) => {
                             e.preventDefault();
+                            setActiveTab("contact");
                             setDrawerOpen(false);
                             setTimeout(() => {
                                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -162,10 +201,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
     return (
         <nav
-            className={`backdrop-blur-md navbar sticky top-2 z-50 border-b-2
+            className={`backdrop-blur-lg navbar sticky top-2 z-50 border-x-2 border-b-2 shadow-2xl
     ${darkMode
-                    ? 'bg-black/50 border-b-indigo-700 backdrop-blur-md'
-                    : 'bg-[rgba(0,0,0,0.1)] border-gray-300 shadow-xl'}
+                    ? 'bg-black/50 border-b-indigo-700 border-x-indigo-900 backdrop-blur-md'
+                    : 'bg-[rgba(0,0,0,0.1)] border-gray-300'}
     rounded-2xl mx-2 px-3 py-3.5 md:py-4 flex items-center justify-between`}
         >
 
@@ -173,7 +212,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <div className="nav-links flex-1">
                 <a
                     href="#home"
-                    className={`text-sm md:text-lg lg:text-xl md:font-medium firaCodeFont ${darkMode ? 'text-white' : 'text-gray-900'
+                    onClick={() => setActiveTab("home")}
+                    className={`text-sm md:text-lg lg:text-xl firaCodeFont ${darkMode ? 'text-white' : 'text-gray-900'
                         } hover:text-green-400 transition-colors`}
                 >
                     &lt;Atharva Jadhav/&gt;
@@ -182,34 +222,35 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
             {/* Center (desktop only): Links */}
             <div
-                className={`nav-links hidden md:flex flex-1 justify-center space-x-10 ${darkMode ? 'text-white' : 'text-gray-900'
+                className={`nav-links text-md hidden md:flex flex-1 justify-center space-x-10 ${darkMode ? 'text-white' : 'text-gray-900'
                     }`}
             >
-                <a href="#about" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                <a href="#about" onClick={() => setActiveTab("about")} className={`${activeTab == "about" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <User className='w-4 h-4 mr-1' />
                     About
                 </a>
                 <a
                     href="/AtharvaJadhav_Resume.pdf"
                     download
-                    className="nav-links hover:text-green-400 transition-colors flex items-center"
+                    onClick={() => setActiveTab("resume")}
+                    className={`${activeTab == "resume" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}
                 >
                     <FileText className='w-4 h-4 mr-1' />
                     Resume
                 </a>
-                <a href="#education" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                <a href="#education" onClick={() => setActiveTab("education")} className={`${activeTab == "education" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <BookOpen className='w-4 h-4 mr-1' />
                     Education
                 </a>
-                <a href="#skills" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                <a href="#skills" onClick={() => setActiveTab("skills")} className={`${activeTab == "skills" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <Code2 className='w-4 h-4 mr-1' />
                     Skills
                 </a>
-                <a href="#projects" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                <a href="#projects" onClick={() => setActiveTab("projects")} className={`${activeTab == "projects" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <Box className='w-4 h-4 mr-1' />
                     Projects
                 </a>
-                <a href="#contact" className="nav-links hover:text-green-400 transition-colors flex items-center">
+                <a href="#contact" onClick={() => setActiveTab("contact")} className={`${activeTab == "contact" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <Mail className='w-4 h-4 mr-1' />
                     Contact
                 </a>
