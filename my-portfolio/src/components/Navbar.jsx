@@ -120,7 +120,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
                             } transition-colors`}
                     >
-                        <Box className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Projects
+                        <i className={` ${darkMode ? 'text-green-400' : 'text-green-600'} fa-solid fa-laptop-code`}></i> Projects
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
