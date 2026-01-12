@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 
 export default function Hero({ darkMode }) {
@@ -91,21 +91,33 @@ export default function Hero({ darkMode }) {
                             AI/ML{" "}
                             and love learning new technologies through hands-on projects.{"</p>"}
                         </div>
-                        <div className="text-gray-100">
-                            <button className={`inline-flex flex-row items-center justify-evenly relative h-12 overflow-hidden rounded-2xl p-[0.8px] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-lg transition-shadow ${darkMode ? "shadow-green-900/20" : "shadow-green-200"}`}>
+                        <div className="text-gray-100 flex flex-row items-center justify-start space-x-3 mt-2 md:mt-0">
+                            <button className={`inline-flex flex-row items-center justify-evenly relative h-12 overflow-hidden rounded-xl p-[0.575px] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-lg transition-shadow ${darkMode ? "shadow-green-900/20" : "shadow-green-200"}`}>
                                 <span className={`absolute inset-[-1000%] animate-[spin_2s_linear_infinite] ${darkMode
                                     ? "bg-[conic-gradient(from_90deg_at_50%_50%,#4ade80_0%,#312e81_50%,#4ade80_100%)]"
                                     : "bg-[conic-gradient(from_90deg_at_50%_50%,#16a34a_0%,#6366f1_50%,#16a34a_100%)]"
                                     }`} />
-                                <span className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-2xl px-5 py-1 text-sm font-semibold backdrop-blur-3xl transition-colors ${darkMode
+                                <span className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl px-3 py-1 text-sm font-medium backdrop-blur-3xl transition-colors ${darkMode
                                     ? "bg-slate-950 text-white"
                                     : "bg-white text-slate-800"
                                     }`}>
                                     <a href="#projects">
                                         View My Work
                                     </a>
-                                    <ArrowRight height={18} width={17} className={`ml-2 ${darkMode ? "text-green-400" : "text-green-600"}`} />
+                                    <i className="fa-solid fa-laptop-code ml-[10.5px]"></i>
                                 </span>
+                            </button>
+                            <button className={`flex flex-row items-center h-12 px-4 py-2 rounded-xl border border-indigo-950 ${darkMode
+                                ? "bg-slate-950 text-white"
+                                : "bg-white text-slate-800"
+                                } backdrop-blur-md`}>
+                                <a
+                                    href="/AtharvaJadhav_Resume.pdf"
+                                    download
+                                >
+                                    Resume
+                                </a>
+                                <Download height={18} width={18} className={`ml-2 ${darkMode ? "text-green-100" : "text-slate-900"}`} />
                             </button>
                         </div>
                     </div>

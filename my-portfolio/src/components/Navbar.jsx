@@ -229,7 +229,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     <User className='w-4 h-4 mr-1' />
                     About
                 </a>
-                <a
+                {/* <a
                     href="/AtharvaJadhav_Resume.pdf"
                     download
                     onClick={() => setActiveTab("resume")}
@@ -237,7 +237,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 >
                     <FileText className='w-4 h-4 mr-1' />
                     Resume
-                </a>
+                </a> */}
                 <a href="#education" onClick={() => setActiveTab("education")} className={`${activeTab == "education" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
                     <BookOpen className='w-4 h-4 mr-1' />
                     Education
@@ -247,7 +247,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     Skills
                 </a>
                 <a href="#projects" onClick={() => setActiveTab("projects")} className={`${activeTab == "projects" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
-                    <Box className='w-4 h-4 mr-1' />
+                    <i className="fa-solid fa-laptop-code mr-1"></i>
                     Projects
                 </a>
                 <a href="#contact" onClick={() => setActiveTab("contact")} className={`${activeTab == "contact" ? 'text-green-400' : ''} nav-links hover:text-green-400 transition-colors flex items-center`}>
