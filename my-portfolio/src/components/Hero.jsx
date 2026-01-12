@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 
 export default function Hero({ darkMode }) {
@@ -107,17 +107,16 @@ export default function Hero({ darkMode }) {
                                     <i className="fa-solid fa-laptop-code ml-[10.5px]"></i>
                                 </span>
                             </button>
-                            <button className={`flex flex-row items-center h-12 px-4 py-2 rounded-xl border border-indigo-950 ${darkMode
+                            <button type="button" className={`flex flex-row items-center h-12 px-4 py-2 rounded-xl border border-indigo-950 ${darkMode
                                 ? "bg-slate-950 text-white"
                                 : "bg-white text-slate-800"
                                 } backdrop-blur-md`}>
                                 <a
-                                    href="/AtharvaJadhav_Resume.pdf"
-                                    download
+                                    href="https://drive.google.com/file/d/1tU2n0ga693BwhbwuRAyAWrMLByAWfekX/view?usp=sharing"
                                 >
                                     Resume
                                 </a>
-                                <Download height={18} width={18} className={`ml-2 ${darkMode ? "text-green-100" : "text-slate-900"}`} />
+                                <FileText height={19} width={18} className={`ml-2 ${darkMode ? "text-green-100" : "text-slate-900"}`} />
                             </button>
                         </div>
                     </div>
