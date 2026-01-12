@@ -94,7 +94,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 </ListItem>
                 <Divider className="border-gray-700" />
 
-                <ListItem disablePadding>
+                {/* <ListItem disablePadding>
                     <a
                         href="/AtharvaJadhav_Resume.pdf"
                         download
@@ -104,7 +104,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                         <FileText className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Resume
                     </a>
                 </ListItem>
-                <Divider className="border-gray-700" />
+                <Divider className="border-gray-700" /> */}
 
                 <ListItem disablePadding>
                     <a
