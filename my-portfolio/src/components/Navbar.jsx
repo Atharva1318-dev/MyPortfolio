@@ -93,6 +93,42 @@ export default function Navbar({ darkMode, setDarkMode }) {
                     </a>
                 </ListItem>
                 <Divider className="border-gray-700" />
+                <ListItem disablePadding>
+                    <a
+                        href="#education"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setActiveTab("education");
+                            setDrawerOpen(false);
+                            setTimeout(() => {
+                                document.querySelector('#education')?.scrollIntoView({ behavior: 'smooth' });
+                            }, 300); // must match Drawer close animation delay
+                        }}
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
+                    >
+                        <BookOpen className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Education
+                    </a>
+                </ListItem>
+                <Divider className="border-gray-700" />
+                <ListItem disablePadding>
+                    <a
+                        href="#skills"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setActiveTab("skills");
+                            setDrawerOpen(false);
+                            setTimeout(() => {
+                                document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });
+                            }, 300); // must match Drawer close animation delay
+                        }}
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
+                            } transition-colors`}
+                    >
+                        <Code2 className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Skills
+                    </a>
+                </ListItem>
+                <Divider className="border-gray-700" />
 
                 {/* <ListItem disablePadding>
                     <a
@@ -125,43 +161,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 </ListItem>
                 <Divider className="border-gray-700" />
 
-                <ListItem disablePadding>
-                    <a
-                        href="#skills"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setActiveTab("skills");
-                            setDrawerOpen(false);
-                            setTimeout(() => {
-                                document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' });
-                            }, 300); // must match Drawer close animation delay
-                        }}
-                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
-                            } transition-colors`}
-                    >
-                        <Code2 className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Skills
-                    </a>
-                </ListItem>
-                <Divider className="border-gray-700" />
 
-                <ListItem disablePadding>
-                    <a
-                        href="#education"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setActiveTab("education");
-                            setDrawerOpen(false);
-                            setTimeout(() => {
-                                document.querySelector('#education')?.scrollIntoView({ behavior: 'smooth' });
-                            }, 300); // must match Drawer close animation delay
-                        }}
-                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg hover:bg-gradient-to-r ${darkMode ? 'from-purple-600 to-indigo-900' : 'from-green-200 to-green-400'
-                            } transition-colors`}
-                    >
-                        <BookOpen className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} /> Education
-                    </a>
-                </ListItem>
-                <Divider className="border-gray-700" />
 
                 <ListItem disablePadding>
                     <a
