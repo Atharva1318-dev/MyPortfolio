@@ -30,7 +30,7 @@ const educationData = [
     {
         date: "2008 – 2021",
         title: "National English School",
-        subtitle: "ICSE — Grade 96%",
+        subtitle: "ICSE — Grade 94.5%",
         icon: School,
     },
 ];
@@ -64,7 +64,7 @@ export default function EducationTimeline({ darkMode }) {
 
     return (
         <section id="education" className="px-2 md:px-8 py-12">
-            <h1 className={`text-center text-2xl md:text-4xl font-bold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+            <h1 className={`text-center text-2xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 Education
             </h1>
             <div className="w-26 md:w-36 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>

@@ -50,7 +50,7 @@ export default function Hero({ darkMode }) {
 
     return (
         <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-0 flex items-center">
-            <div className="container mx-auto px-3 lg:px-2 py-6">
+            <div className="container mx-auto px-4 lg:px-5 py-6">
                 <div className="grid lg:grid-cols-2 gap-y-12 gap-x-16 items-center">
 
                     {/* Content Section */}
@@ -58,7 +58,7 @@ export default function Hero({ darkMode }) {
 
                         {/* Name Block */}
                         <div className="flex flex-col leading-none select-none">
-                            <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight ${darkMode ? "text-white" : "text-gray-900"}`}>
+                            <h1 className={`text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight ${darkMode ? "text-white" : "text-gray-900"}`}>
                                 ATHARVA
                             </h1>
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text pb-2">
@@ -131,21 +131,21 @@ export default function Hero({ darkMode }) {
                                 className={`absolute inset-0 blur-[60px] rounded-full -z-10 ${darkMode ? "bg-indigo-600/25" : "bg-green-400/20"
                                     }`}
                             />
-                            <div className="w-80 h-75 md:w-full md:h-full p-2" ref={avatarRef}>
+                            <div className="w-80 h-75 md:w-90 md:h-85 lg:w-full lg:h-95 p-2" ref={avatarRef}>
                                 <div className={`w-full h-full transform scale-112 drop-shadow-sm ${darkMode ? "drop-shadow-indigo-600" : "drop-shadow-sky-300"}`}>
                                     <img
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
                                         alt="Atharva Jadhav Profile"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                         decoding="async"
                                     />
                                 </div>
                             </div>
-                            <div className={`absolute bottom-4 right-4 md:bottom-1 md:right-18 p-3 md:p-4 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center justify-center ${darkMode
+                            <div className={`absolute bottom-4 right-4 md:bottom-1 md:right-18 p-2 md:p-3 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center justify-center ${darkMode
                                 ? "bg-black/60 border-green-500/30 text-green-400"
                                 : "bg-white/80 border-green-200 text-green-600"
                                 }`}>
-                                <span className="font-mono text-lg md:text-xl font-bold tracking-tighter">{"</>"}</span>
+                                <span className="font-mono text-md md:text-lg font-bold tracking-tighter">{"</>"}</span>
                             </div>
                         </div>
                     </div>

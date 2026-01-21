@@ -44,13 +44,13 @@ export default function About({ darkMode }) {
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>
             <h1
-                className={`text-center text-2xl md:text-4xl font-bold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
+                className={`text-center text-2xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 About Me
             </h1>
             <div className="w-24 md:w-32 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <div className="container mx-auto px-6 py-12">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-3.5 items-center">
                     {/* Profile Image */}
                     <div ref={picRef} className="flex justify-center lg:justify-start">
                         <div className="relative">
@@ -62,8 +62,11 @@ export default function About({ darkMode }) {
                                     <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/me_xltawb.jpg" alt="John Dev Profile" className="w-full h-full object-cover" />
                                 </div>
                             </div>
-                            <div className="absolute -bottom-4 -right-4 bg-green-500 p-3 rounded-lg">
-                                <div className="text-gray-900 font-mono text-lg">{"</>"}</div>
+                            <div className={`absolute -bottom-4 right-4 md:-bottom-8 md:right-3 p-2 md:p-3 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center justify-center ${darkMode
+                                ? "bg-black/60 border-green-500/30 text-green-400"
+                                : "bg-white/80 border-green-200 text-green-600"
+                                }`}>
+                                <span className="font-mono text-md md:text-lg font-bold tracking-tighter">{"</>"}</span>
                             </div>
                         </div>
                     </div>

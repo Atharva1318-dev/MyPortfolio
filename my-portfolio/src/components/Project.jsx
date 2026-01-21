@@ -114,8 +114,9 @@ export default function MyProjects({ darkMode }) {
             {
                 y: 0,
                 opacity: 1,
-                duration: 0.85,
-                stagger: 0.25,
+                duration: 0.75,
+                stagger: 0.2,
+                delay: 0.1,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: ".projects-grid",
@@ -127,8 +128,8 @@ export default function MyProjects({ darkMode }) {
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} id="projects" className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-            <h1 className={`text-center text-2xl md:text-4xl font-bold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+        <section ref={sectionRef} id="projects" className="min-h-screen py-16 px-4 sm:px-6 lg:px-7 overflow-x-hidden">
+            <h1 className={`text-center text-2xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
             <div className="w-32 md:w-40 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
@@ -141,7 +142,7 @@ export default function MyProjects({ darkMode }) {
 
 
             {/* Projects Grid */}
-            <div className="projects-grid max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="projects-grid max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-9">
                 {projectsData.map((project, index) => (
                     <ProjectCard
                         key={index}

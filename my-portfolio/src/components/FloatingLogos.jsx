@@ -49,7 +49,7 @@ export default function FloatingLogos({ darkMode }) {
     }, { scope: containerRef });
 
     return (
-        <div className="min-h-screen fixed inset-0 z-0 overflow-x-hidden" ref={containerRef}>
+        <div className="min-h-screen fixed inset-0 z-0 overflow-hidden" ref={containerRef}>
             {logos.map((src, i) => {
                 const top = Math.random() * 100;
                 const left = Math.random() * 100;
