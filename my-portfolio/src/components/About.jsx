@@ -44,13 +44,13 @@ export default function About({ darkMode }) {
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>
             <h1
-                className={`text-center text-2xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
+                className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
             >
                 About Me
             </h1>
             <div className="w-24 md:w-32 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <div className="container mx-auto px-6 py-12">
-                <div className="grid lg:grid-cols-2 gap-3.5 items-center">
+                <div className="grid lg:grid-cols-2 gap-6 md:gap-3.5 items-center">
                     {/* Profile Image */}
                     <div ref={picRef} className="flex justify-center lg:justify-start">
                         <div className="relative">

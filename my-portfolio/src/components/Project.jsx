@@ -129,7 +129,7 @@ export default function MyProjects({ darkMode }) {
 
     return (
         <section ref={sectionRef} id="projects" className="min-h-screen py-16 px-4 sm:px-6 lg:px-7 overflow-x-hidden">
-            <h1 className={`text-center text-2xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
+            <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
             <div className="w-32 md:w-40 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
