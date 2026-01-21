@@ -203,7 +203,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
     return (
         <nav
-            className={`backdrop-blur-lg navbar sticky top-2 z-50 border-x border-b border-t shadow-2xl
+            className={`backdrop-blur-lg navbar sticky top-2 z-100 border-x border-b border-t shadow-2xl
     ${darkMode
                     ? 'bg-black/50 border-b-indigo-700 border-x-indigo-900 border-t-indigo-950 backdrop-blur-md'
                     : 'bg-[rgba(0,0,0,0.1)] border-gray-300'}

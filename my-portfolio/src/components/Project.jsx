@@ -106,25 +106,44 @@ export default function MyProjects({ darkMode }) {
     useGSAP(() => {
         const cards = gsap.utils.toArray(".project-card", sectionRef.current);
 
-        gsap.fromTo(cards,
-            {
-                y: 100,
-                opacity: 0,
+        // Set initial state
+        gsap.set(cards, {
+            y: 80,
+            opacity: 0,
+            scale: 0.95
+        });
+
+        // Create stagger animation
+        gsap.to(cards, {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            stagger: {
+                amount: 0.6,
+                from: "start",
+                ease: "power2.out"
             },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.75,
-                stagger: 0.2,
-                delay: 0.1,
-                ease: "power3.out",
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 75%",
+                end: "top 25%",
+                toggleActions: "play none none reverse",
+            },
+        });
+        cards.forEach((card, index) => {
+            gsap.to(card, {
+                y: -20,
                 scrollTrigger: {
-                    trigger: ".projects-grid",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-            }
-        );
+                    trigger: card,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                }
+            });
+        });
+
     }, { scope: sectionRef });
 
     return (
@@ -132,7 +151,7 @@ export default function MyProjects({ darkMode }) {
             <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
-            <div className="w-32 md:w-40 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <div className="w-32 md:w-48 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <p
                 className={`${darkMode ? "text-gray-300 text-center" : "text-gray-700 text-center"
                     } text-lg max-w-2xl mx-auto mb-8`}

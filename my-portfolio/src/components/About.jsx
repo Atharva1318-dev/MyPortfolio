@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { gsap } from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Code2, Globe, Palette, Trophy } from "lucide-react"
+import { Code2, Globe, Palette, Trophy, Users } from "lucide-react"
 import { GlowingEffect } from './ui/glowing-effect';
 
 
@@ -48,186 +48,81 @@ export default function About({ darkMode }) {
             >
                 About Me
             </h1>
-            <div className="w-24 md:w-32 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
-            <div className="container mx-auto px-6 py-12">
+            <div className="w-26 md:w-38 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <div className="container mx-auto px-5 py-12">
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-3.5 items-center">
-                    {/* Profile Image */}
-                    <div ref={picRef} className="flex justify-center lg:justify-start">
-                        <div className="relative">
-                            <div
-                                className={`w-45 h-45 md:w-85 md:h-85 bg-gradient-to-br ${darkMode ? "from-gray-700 to-gray-800" : "from-blue-50 to-indigo-100"
-                                    } transform rotate-45 rounded-3xl overflow-hidden`}
-                            >
-                                <div className="w-full h-full transform -rotate-45 scale-150 translate-y-8">
-                                    <img src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/me_xltawb.jpg" alt="John Dev Profile" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
-                            <div className={`absolute -bottom-4 right-4 md:-bottom-8 md:right-3 p-2 md:p-3 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center justify-center ${darkMode
-                                ? "bg-black/60 border-green-500/30 text-green-400"
-                                : "bg-white/80 border-green-200 text-green-600"
-                                }`}>
-                                <span className="font-mono text-md md:text-lg font-bold tracking-tighter">{"</>"}</span>
-                            </div>
+
+                    <div ref={picRef} className="flex justify-center items-center relative group">
+                        {/* Abstract Background Decoration */}
+                        <div className={`absolute inset-0 rounded-3xl blur-[40px] opacity-40 group-hover:opacity-50 transition-opacity duration-500 ${darkMode ? "bg-indigo-900" : "bg-blue-400"
+                            }`}></div>
+
+                        {/* Main Image Container */}
+                        <div className={`relative z-10 w-64 h-60 md:w-80 md:h-80 rounded-2xl overflow-hidden border-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:rotate-[0.4deg] ${darkMode
+                            ? "border-gray-700 bg-gray-800"
+                            : "border-white bg-white"
+                            }`}>
+                            <img
+                                src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/me_xltawb.jpg"
+                                alt="Atharva Jadhav"
+                                className="w-full h-full object-cover"
+                            />
+
+                            {/* Overlay Gradient for depth */}
+                            <div className={`absolute inset-0 bg-gradient-to-t ${darkMode ? "from-black/60 via-transparent" : "from-blue-900/30 via-transparent"
+                                } to-transparent opacity-60`}></div>
                         </div>
                     </div>
 
-                    {/* Content */}
-                    <div ref={abtRef} className="self-start">
-                        <div className="space-y-3">
-                            <div
-                                className={`backdrop-blur-sm rounded-2xl p-4 border transition-colors shadow-[0_3px_6px_rgba(0,0,0,0.1)] ${darkMode
-                                    ? "bg-gray-800/50 border-gray-700/40 text-gray-300"
-                                    : "bg-white/70 border-blue-100/60 text-gray-700"
-                                    }`}
-                            >
-                                <GlowingEffect
-                                    spread={40}
-                                    glow={true}
-                                    disabled={false}
-                                    proximity={70}
-                                    inactiveZone={0.01}
-                                />
-                                <p className="text-md leading-relaxed">
-                                    Hi, I'm{" "}
-                                    <span className={`font-semibold text-lg ${darkMode ? "text-green-400" : "text-green-600"}`}>
-                                        Atharva Pramod Jadhav
-                                    </span>
-                                    , a third-year Computer Engineering student at{" "}
-                                    <span className={`font-medium text-lg ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
-                                        Thadomal Shahani Engineering College
-                                    </span>
-                                    , Bandra, Mumbai (Class of '27).
+                    {/* Content Side */}
+                    <div ref={abtRef} className="self-start space-y-6">
+
+                        {/* 1. Main Intro - Clean Text (No Box) for better readability */}
+                        <div className="pl-2 border-l-4 border-green-500">
+                            <h3 className={`text-2xl font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>
+                                Hello, I'm <span className="text-green-500">Atharva.</span>
+                            </h3>
+                            <p className={`text-lg leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                                A third-year Computer Engineering student at <span className="font-semibold text-blue-500">TSEC Mumbai</span>.
+                            </p>
+                        </div>
+
+                        {/* 2. Attributes Grid - The "Bento" Style */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <div className={`p-5 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-green-500/50" : "bg-white border-gray-200 shadow-sm"
+                                }`}>
+                                <Code2 className="mb-3 text-green-500" size={24} />
+                                <h4 className={`font-bold mb-1 ${darkMode ? "text-white" : "text-gray-900"}`}>Full Stack</h4>
+                                <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                                    Evolved from MERN stack to building scalable apps with Next.js, PostgreSQL & Prisma, actively exploring AI integrations in my projects.
                                 </p>
                             </div>
 
-                            {/* Skills & Interests */}
-                            <div className="grid md:grid-cols-2 gap-3">
-                                <div
-                                    className={`${darkMode
-                                        ? "bg-slate-800/30 border-slate-700/30 text-gray-300"
-                                        : "bg-white/70 border-green-100/60 text-gray-700"
-                                        } shadow-[0_3px_6px_rgba(0,0,0,0.1)] backdrop-blur-sm rounded-xl p-5 border`}
-                                >
-                                    <GlowingEffect
-                                        spread={40}
-                                        glow={true}
-                                        disabled={false}
-                                        proximity={70}
-                                        inactiveZone={0.01}
-                                    />
-                                    <h3
-                                        className={`font-semibold mb-3 flex items-center gap-2 ${darkMode ? "text-green-400" : "text-green-600"}`}
-                                    >
-                                        <Code2 size={20} />
-                                        Technical Skills
-                                    </h3>
-                                    <p className="text-sm leading-relaxed">
-                                        I enjoy building full-stack web applications and writing clean, readable code. I have evolved from the{" "}
-                                        <span className={`font-medium ${darkMode ? "text-yellow-400" : "text-yellow-600"}`}>
-                                            MERN stack
-                                        </span>
-                                        {" "}to building scalable apps with{" "}
-                                        <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
-                                            Next.js
-                                        </span>
-                                        ,{" "}
-                                        <span className={`font-medium ${darkMode ? "text-purple-400" : "text-purple-600"}`}>
-                                            PostgreSQL
-                                        </span>
-                                        , &{" "}
-                                        <span className={`font-medium ${darkMode ? "text-purple-400" : "text-purple-600"}`}>
-                                            Prisma
-                                        </span>
-                                        . Currently, I am actively exploring{" "}
-                                        <span className={`font-medium ${darkMode ? "text-green-400" : "text-green-600"}`}>
-                                            AI/ML
-                                        </span>
-                                        {" "}integrations.
-                                    </p>
-                                </div>
-
-                                <div
-                                    className={`${darkMode
-                                        ? "bg-slate-800/30 border-slate-700/30 text-gray-300"
-                                        : "bg-white/70 border-blue-100/60 text-gray-700"
-                                        } shadow-[0_3px_6px_rgba(0,0,0,0.1)] backdrop-blur-sm rounded-xl p-5 border`}
-                                >
-                                    <GlowingEffect
-                                        spread={40}
-                                        glow={true}
-                                        disabled={false}
-                                        proximity={70}
-                                        inactiveZone={0.01}
-                                    />
-                                    <h3
-                                        className={`font-semibold mb-3 flex items-center gap-2 ${darkMode ? "text-blue-400" : "text-blue-600"}`}
-                                    >
-                                        <Trophy size={20} />
-                                        Experience
-                                    </h3>
-                                    <p className="text-sm leading-relaxed">
-                                        I'm always eager to pick up new frameworks and tools. While I haven't done a formal internship yet,
-                                        I've honed my teamwork skills through hackathons and group projects.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Personal Interests */}
-                            <div
-                                className={`${darkMode
-                                    ? "bg-gradient-to-r from-slate-800/40 to-purple-800/20 border-slate-700/40 text-gray-300"
-                                    : "bg-white/70 border-pink-100/60 text-gray-700"
-                                    } backdrop-blur-sm rounded-2xl p-4 border`}
-                            >
-                                <GlowingEffect
-                                    spread={40}
-                                    glow={true}
-                                    disabled={false}
-                                    proximity={70}
-                                    inactiveZone={0.01}
-                                />
-                                <h3
-                                    className={`font-semibold mb-4 flex items-center gap-2 ${darkMode ? "text-purple-400" : "text-pink-600"}`}
-                                >
-                                    <Palette size={20} />
-                                    Beyond Coding
-                                </h3>
-                                <p className="leading-relaxed">
-                                    Outside of coding, I'm passionate about{" "}
-                                    <span className={`font-medium ${darkMode ? "text-pink-400" : "text-pink-600"}`}>
-                                        portrait sketching
-                                    </span>
-                                    , love playing{" "}
-                                    <span className={`font-medium ${darkMode ? "text-green-400" : "text-green-600"}`}>cricket</span>, and
-                                    keep active by hitting the gym as and when time permits.
+                            <div className={`p-5 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-blue-500/50" : "bg-white border-gray-200 shadow-sm"
+                                }`}>
+                                <Users className="mb-3 text-blue-500" size={24} />
+                                <h4 className={`font-bold mb-1 ${darkMode ? "text-white" : "text-gray-900"}`}>Team Work</h4>
+                                <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                                    While I haven't done a formal internship yet and is currently seeking one, I've honed collaboration skills by participating in hackathons.
                                 </p>
                             </div>
 
-                            {/* Goals */}
-                            <div
-                                className={`${darkMode
-                                    ? "bg-slate-800/50 border-slate-700/50 text-gray-300"
-                                    : "bg-white/70 border-yellow-100/60 text-gray-700"
-                                    } backdrop-blur-sm rounded-2xl p-4 border`}
-                            >
-                                <GlowingEffect
-                                    spread={40}
-                                    glow={true}
-                                    disabled={false}
-                                    proximity={70}
-                                    inactiveZone={0.01}
-                                />
-                                <h3
-                                    className={`font-semibold mb-4 flex items-center gap-2 ${darkMode ? "text-yellow-400" : "text-yellow-600"}`}
-                                >
-                                    <Globe size={20} />
-                                    My Goal
-                                </h3>
-                                <p className="leading-relaxed">
-                                    My goal is to become a versatile full-stack developer who writes robust, maintainable code—and to
-                                    tackle new challenges with{" "}
-                                    <span className={`font-medium ${darkMode ? "text-green-400" : "text-green-600"}`}>curiosity</span> and{" "}
-                                    <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>enthusiasm</span>.
+                            <div className={`p-5 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-pink-500/50" : "bg-white border-gray-200 shadow-sm"
+                                }`}>
+                                <Palette className="mb-3 text-pink-500" size={24} />
+                                <h4 className={`font-bold mb-1 ${darkMode ? "text-white" : "text-gray-900"}`}>Beyond Code</h4>
+                                <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                                    Passionate about portrait sketching,love playing cricket.
+                                </p>
+                            </div>
+
+                            <div className={`p-5 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-yellow-500/50" : "bg-white border-gray-200 shadow-sm"
+                                }`}>
+                                <Trophy className="mb-3 text-yellow-500" size={24} />
+                                <h4 className={`font-bold mb-1 ${darkMode ? "text-white" : "text-gray-900"}`}>The Goal</h4>
+                                <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+                                    Building robust, user-centric software that solves real-world problems.
                                 </p>
                             </div>
                         </div>

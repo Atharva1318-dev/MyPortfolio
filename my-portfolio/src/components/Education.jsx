@@ -67,7 +67,7 @@ export default function EducationTimeline({ darkMode }) {
             <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 Education
             </h1>
-            <div className="w-26 md:w-36 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
+            <div className="w-28 md:w-44 h-[0.8px] bg-gradient-to-r from-green-500 to-indigo-900 mx-auto mb-6"></div>
             <p
                 className={`${darkMode ? "text-gray-300 text-center" : "text-gray-700 text-center"} text-lg max-w-2xl mx-auto mb-8`}
             >

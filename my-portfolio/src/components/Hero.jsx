@@ -85,9 +85,9 @@ export default function Hero({ darkMode }) {
 
                         {/* Description */}
                         <div className={`text-md md:text-lg leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-slate-700"}`}>
-                            I build scalable <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>full-stack</span> web applications using <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>React</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Next.js</span>, and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Node.js</span>.
+                            Building scalable <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>full-stack</span> web applications with <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>React</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Next.js</span>, and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Node.js</span>.
                             <br className="hidden md:block" />
-                            My work is backed by databases like <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>PostgreSQL</span> and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>MongoDB</span>. I also integrate <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>AI/ML</span> tools like <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Google Gemini</span> into modern digital experiences.
+                            Experienced with <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>PostgreSQL</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>MongoDB</span>, and integrating <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>AI-powered solutions</span><span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}></span> for smarter applications.
                         </div>
 
                         {/* Buttons */}
