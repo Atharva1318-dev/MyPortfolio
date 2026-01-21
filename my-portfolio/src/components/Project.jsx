@@ -132,18 +132,6 @@ export default function MyProjects({ darkMode }) {
                 toggleActions: "play none none reverse",
             },
         });
-        cards.forEach((card, index) => {
-            gsap.to(card, {
-                y: -20,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1,
-                }
-            });
-        });
-
     }, { scope: sectionRef });
 
     return (
