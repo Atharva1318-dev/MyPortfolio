@@ -40,23 +40,24 @@ export default function EducationTimeline({ darkMode }) {
 
     useGSAP(() => {
         gsap.from(".timeline-entry", {
-            y: 50,
+            y: 30, // Reduced from 50
             opacity: 0,
             duration: 1,
-            ease: "power3.out",
-            stagger: 0.4,
+            ease: "power2.out", // Smoother ease
+            stagger: 0.3, // Slightly slower stagger
             scrollTrigger: {
                 trigger: timelineRef.current,
-                start: "top 80%",
+                start: "top 75%",
+                toggleActions: "play none none reverse"
             },
         });
 
         gsap.utils.toArray(".timeline-entry").forEach((el) => {
             el.addEventListener("mouseenter", () => {
-                gsap.to(el, { scale: 1.02, duration: 0.2, ease: "power2.out" });
+                gsap.to(el, { scale: 1.01, duration: 0.3, ease: "power2.out" }); // Less subtle scale
             });
             el.addEventListener("mouseleave", () => {
-                gsap.to(el, { scale: 1, duration: 0.2, ease: "power2.out" });
+                gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" });
             });
         });
     }, []);

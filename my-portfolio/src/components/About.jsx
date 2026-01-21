@@ -9,7 +9,6 @@ import { GlowingEffect } from './ui/glowing-effect';
 export default function About({ darkMode }) {
     const picRef = useRef(null);
     const abtRef = useRef(null);
-
     gsap.registerPlugin(ScrollTrigger);
 
     useGSAP(() => {
@@ -40,7 +39,7 @@ export default function About({ darkMode }) {
                 end: "top 10%"
             }
         });
-    }, [])
+    }, []);
 
     return (
         <div id="about" className={darkMode ? "text-white overflow-x-hidden" : "text-gray-900 overflow-x-hidden"}>

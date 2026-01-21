@@ -19,15 +19,14 @@ export default function ContactMe({ darkMode }) {
     useGSAP(() => {
         gsap.from(gsapRef.current, {
             opacity: 0,
-            y: 20,
-            duration: 1.5,
-            ease: "power1.in",
+            y: 30, // Reduced from 50 (implied, previous was 20 scrubbed)
+            duration: 1,
+            ease: "power2.out",
             scrollTrigger: {
                 scroller: "body",
                 trigger: "#contact",
-                start: "top 60%",
-                end: "top 35%",
-                scrub: true
+                start: "top 70%",
+                toggleActions: "play none none reverse" // Clean reveal instead of scrub
             }
         })
     })

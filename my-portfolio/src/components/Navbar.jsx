@@ -16,10 +16,12 @@ export default function Navbar({ darkMode, setDarkMode }) {
 
     useGSAP(() => {
         gsap.from('.nav-links', {
-            y: -70,
-            duration: 0.65,
-            delay: 0.1,
-            stagger: 0.25
+            y: -90,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            stagger: 0.15,
+            ease: "power4.out"
         });
     }, []);
 

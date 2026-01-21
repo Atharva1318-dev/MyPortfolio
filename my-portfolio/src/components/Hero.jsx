@@ -2,144 +2,150 @@ import React, { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText } from "lucide-react";
-
+import { FileText } from "lucide-react";
 
 export default function Hero({ darkMode }) {
     const avatarRef = useRef(null);
     const leftGsap = useRef(null);
     const rightGsap = useRef(null);
+    const glowRef = useRef(null);
 
     useGSAP(() => {
+        // Avatar float
         gsap.from(avatarRef.current, {
-            scale: 1.02,
-            y: -3,
-            duration: 2,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut",
-        });
-
-        gsap.from(leftGsap.current, {
-            x: -786,
+            scale: 0.95,
+            opacity: 0,
             duration: 1.5,
-            delay: 0.2,
             ease: "power3.out"
         });
 
+        // Continuous floating
+        gsap.to(avatarRef.current, {
+            y: -10,
+            duration: 3,
+            yoyo: true,
+            repeat: -1,
+            ease: "sine.inOut",
+            delay: 1.5
+        });
+
+        // Content Fade Up
+        gsap.from(leftGsap.current, {
+            y: 40,
+            opacity: 0,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "power3.out"
+        });
+
+        // Image Fade Up
         gsap.from(rightGsap.current, {
-            x: 760,
-            duration: 1.5,
-            delay: 0.35,
+            y: 40,
+            opacity: 0,
+            duration: 1.2,
+            delay: 0.5,
             ease: "power3.out"
         })
     }, []);
 
-
     return (
-        <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-3">
-            <div className="container mx-auto px-2 lg:px-1 py-10">
-                <div className="grid lg:grid-cols-2 gap-y-9 gap-x-24 items-center">
-                    {/* Content */}
+        <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-0 flex items-center">
+            <div className="container mx-auto px-3 lg:px-2 py-6">
+                <div className="grid lg:grid-cols-2 gap-y-12 gap-x-16 items-center">
+
+                    {/* Content Section */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
-                        <div className={`font-mono firaCodeFont ${darkMode ? "text-gray-400" : "text-gray-700"}`}>
-                            {"<span>"}Hey, I'm Atharva Jadhav{"</span>"}
+
+                        {/* Name Block */}
+                        <div className="flex flex-col leading-none select-none">
+                            <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight ${darkMode ? "text-white" : "text-gray-900"}`}>
+                                ATHARVA
+                            </h1>
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text pb-2">
+                                JADHAV
+                            </h1>
                         </div>
-                        <h1
-                            className={`text-4xl lg:text-5xl font-semibold leading-tight ${darkMode ? "text-white" : "text-gray-900"
-                                }`}
-                        >
-                            <span className={`${darkMode ? "text-green-400" : "text-green-500"} font-mono`}>
-                                {"{"}
-                            </span>
-                            <span className={`heading ${darkMode ? "text-green-400" : "text-green-500"}`}>
+
+                        {/* Typewriter Sub-heading */}
+                        <div className={`text-2xl md:text-3xl xl:text-4xl font-semibold flex items-center gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                            <span className={`${darkMode ? "text-green-400" : "text-green-600"}`}>&gt;</span>
+                            <span className="min-h-[40px]">
                                 <Typewriter
-                                    words={["Full Stack Dev", "CSE @TSEC"]}
-                                    cursorColor="green"
+                                    words={["Full Stack Dev", "Aspiring Software Engineer", "CSE @ TSEC"]}
                                     loop={Infinity}
                                     cursor
-                                    cursorStyle="|"
+                                    cursorStyle="_"
+                                    cursorColor={darkMode ? "#4ade80" : "#16a34a"}
                                     typeSpeed={70}
                                     deleteSpeed={50}
                                     delaySpeed={1000}
                                 />
                             </span>
-                            <span className={`${darkMode ? "text-green-400" : "text-green-500"} font-mono`}>
-                                {"}"}
-                            </span>
-                            <br />
-                            <span className={darkMode ? "text-white heading" : "text-gray-800 heading"}>Aspiring Software Engg</span>
-                            <span className={darkMode ? "text-green-400 heading" : "text-green-600 heading"}>_</span>
-                        </h1>
-                        <div
-                            className={`firaCodeFont text-sm lg:text-md leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-gray-800"
-                                }`}
-                        >
-                            {"<p>"}I enjoy building{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>full-stack</span>{" "}
-                            web applications. I have worked with{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>React</span>,{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>Next.js</span>, and{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>Node.js</span>, using databases like{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>PostgreSQL</span>{" "}
-                            and{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>MongoDB</span>. I’ve built{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>AI-powered</span>{" "}
-                            products using tools like{" "}
-                            <span className={darkMode ? "text-blue-400" : "text-blue-600"}>Google Gemini</span>. I’m also curious about{" "}
-                            AI/ML{" "}
-                            and love learning new technologies through hands-on projects.{"</p>"}
                         </div>
-                        <div className="text-gray-100 flex flex-row items-center justify-start space-x-3 mt-2 md:mt-0">
+
+                        {/* Description */}
+                        <div className={`text-md md:text-lg leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-slate-700"}`}>
+                            I build scalable <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>full-stack</span> web applications using <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>React</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Next.js</span>, and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Node.js</span>.
+                            <br className="hidden md:block" />
+                            My work is backed by databases like <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>PostgreSQL</span> and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>MongoDB</span>. I also integrate <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>AI/ML</span> tools like <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Google Gemini</span> into modern digital experiences.
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="text-gray-100 flex flex-row items-center justify-start space-x-4 mt-2 md:mt-0">
                             <button className={`inline-flex flex-row items-center justify-evenly relative h-12 overflow-hidden rounded-xl p-[0.575px] focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 shadow-lg transition-shadow ${darkMode ? "shadow-green-900/20" : "shadow-green-200"}`}>
                                 <span className={`absolute inset-[-1000%] animate-[spin_2s_linear_infinite] ${darkMode
                                     ? "bg-[conic-gradient(from_90deg_at_50%_50%,#4ade80_0%,#312e81_50%,#4ade80_100%)]"
                                     : "bg-[conic-gradient(from_90deg_at_50%_50%,#16a34a_0%,#6366f1_50%,#16a34a_100%)]"
                                     }`} />
-                                <span className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl px-3 py-1 text-sm font-medium backdrop-blur-3xl transition-colors ${darkMode
+                                <span className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl px-5 py-1 text-sm font-medium backdrop-blur-3xl transition-colors ${darkMode
                                     ? "bg-slate-950 text-white"
                                     : "bg-white text-slate-800"
                                     }`}>
                                     <a href="#projects">
                                         View My Work
                                     </a>
-                                    <i className="fa-solid fa-laptop-code ml-[10.5px]"></i>
+                                    <i className="fa-solid fa-laptop-code ml-2.5"></i>
                                 </span>
                             </button>
-                            <button type="button" className={`flex flex-row items-center h-12 px-4 py-2 rounded-xl border border-indigo-950 ${darkMode
-                                ? "bg-slate-950 text-white"
-                                : "bg-white text-slate-800"
-                                } backdrop-blur-md`}>
+                            <button type="button" className={`flex flex-row items-center h-12 px-5 py-2 rounded-xl border border-indigo-950/50 ${darkMode
+                                ? "bg-slate-950 text-white hover:bg-slate-900"
+                                : "bg-white text-slate-800 hover:bg-gray-50 border-gray-200"
+                                } backdrop-blur-md transition-colors`}>
                                 <a
                                     href="https://drive.google.com/file/d/1tU2n0ga693BwhbwuRAyAWrMLByAWfekX/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     Resume
                                 </a>
-                                <FileText height={19} width={18} className={`ml-2 ${darkMode ? "text-green-100" : "text-slate-900"}`} />
+                                <FileText height={18} width={18} className={`ml-2 ${darkMode ? "text-green-400" : "text-slate-600"}`} />
                             </button>
                         </div>
                     </div>
-                    {/* Profile Image */}
-                    <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center py-5">
+
+                    {/* Profile Image Section */}
+                    <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center">
                         <div className="relative">
-                            <div className="w-85 h-75 md:w-full md:h-full p-2" ref={avatarRef}>
+                            <div
+                                ref={glowRef}
+                                className={`absolute inset-0 blur-[60px] rounded-full -z-10 ${darkMode ? "bg-indigo-600/25" : "bg-green-400/20"
+                                    }`}
+                            />
+                            <div className="w-80 h-75 md:w-full md:h-full p-2" ref={avatarRef}>
                                 <div className={`w-full h-full transform scale-112 drop-shadow-sm ${darkMode ? "drop-shadow-indigo-600" : "drop-shadow-sky-300"}`}>
                                     <img
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
                                         alt="Atharva Jadhav Profile"
-                                        className="w-full h-full object-contain"
+                                        className="w-full h-full object-cover"
                                         decoding="async"
                                     />
-                                    {/* <img
-                                        src="Hero4.png"
-                                        alt="Atharva Jadhav Profile"
-                                        className="w-full h-full object-contain"
-                                    /> */}
                                 </div>
                             </div>
-                            <div className="absolute -bottom-1 right-0 bg-green-500 p-2 rounded-lg">
-                                <div className="text-gray-900 font-mono text-lg">{"</>"}</div>
+                            <div className={`absolute bottom-4 right-4 md:bottom-1 md:right-18 p-3 md:p-4 rounded-2xl border backdrop-blur-xl shadow-2xl flex items-center justify-center ${darkMode
+                                ? "bg-black/60 border-green-500/30 text-green-400"
+                                : "bg-white/80 border-green-200 text-green-600"
+                                }`}>
+                                <span className="font-mono text-lg md:text-xl font-bold tracking-tighter">{"</>"}</span>
                             </div>
                         </div>
                     </div>

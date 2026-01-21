@@ -36,7 +36,12 @@ function App() {
   }
 
   return (
-    <div className={darkMode ? "container min-w-screen bg-gradient-to-br from-black to-indigo-900" : "container min-w-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50"}>
+    <div
+      className={`w-full min-h-screen overflow-x-hidden bg-gradient-to-br ${darkMode
+        ? "from-black to-indigo-950"
+        : "from-blue-50 via-white to-indigo-50"
+        }`}
+    >
       <FloatingLogos darkMode={darkMode}></FloatingLogos>
       <div className="relative z-10 min-h-screen hero-gradient transition-colors">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />

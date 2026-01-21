@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Code, Palette, Server, Wrench, ChevronDown } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -52,24 +52,33 @@ const skillsData = {
 
 export default function SkillsSection({ darkMode }) {
     const [expandedCards, setExpandedCards] = useState([]);
+    const containerRef = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
 
     useGSAP(() => {
-        gsap.from(".fadeIn", {
-            y: 40,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power1.in",
-            scrollTrigger: {
-                scroller: 'body',
-                trigger: "#skills",
-                start: "top 44%",
-                end: "top 10%",
-                scrub: true
+        // Ensure we select only elements within this component using the scope
+        const cards = gsap.utils.toArray(".fadeIn", containerRef.current);
+
+        gsap.fromTo(cards,
+            {
+                y: 50,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.2, // Smooth stagger
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: containerRef.current, // Trigger based on the container
+                    start: "top 85%", // Starts a bit earlier to ensure visibility
+                    toggleActions: "play none none reverse"
+                }
             }
-        })
-    })
+        );
+    }, { scope: containerRef });
 
     const toggleCard = (category) => {
         setExpandedCards((prev) =>
@@ -83,6 +92,7 @@ export default function SkillsSection({ darkMode }) {
 
     return (
         <section
+            ref={containerRef}
             id="skills"
             className="min-h-screen py-12 px-6 md:px-12 relative overflow-x-hidden"
         >
