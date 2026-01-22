@@ -57,28 +57,25 @@ export default function SkillsSection({ darkMode }) {
     gsap.registerPlugin(ScrollTrigger);
 
     useGSAP(() => {
-        // Ensure we select only elements within this component using the scope
         const cards = gsap.utils.toArray(".fadeIn", containerRef.current);
 
-        gsap.fromTo(cards,
-            {
-                y: 50,
-                opacity: 0
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                stagger: 0.2, // Smooth stagger
-                ease: "power2.out",
+        cards.forEach((card, i) => {
+            gsap.from(card, {
+                y: 24,              // smaller movement = smoother
+                opacity: 0,
+                duration: 0.6,
+                ease: "power3.out",
+                delay: i * 0.08,    // natural stagger without GSAP stagger
                 scrollTrigger: {
-                    trigger: containerRef.current, // Trigger based on the container
-                    start: "top 85%", // Starts a bit earlier to ensure visibility
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
+                    trigger: card,
+                    start: "top 85%",
+                    end: "top 65%",
+                    scrub: 0.4,       // 👈 very light scrub
+                },
+            });
+        });
     }, { scope: containerRef });
+
 
     const toggleCard = (category) => {
         setExpandedCards((prev) =>

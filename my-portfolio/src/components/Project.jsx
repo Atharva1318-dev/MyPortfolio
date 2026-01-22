@@ -106,36 +106,25 @@ export default function MyProjects({ darkMode }) {
     useGSAP(() => {
         const cards = gsap.utils.toArray(".project-card", sectionRef.current);
 
-        // Set initial state
-        gsap.set(cards, {
-            y: 80,
-            opacity: 0,
-            scale: 0.95
-        });
-
-        // Create stagger animation
-        gsap.to(cards, {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            stagger: {
-                amount: 0.6,
-                from: "start",
-                ease: "power2.out"
-            },
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 75%",
-                end: "top 25%",
-                toggleActions: "play none none reverse",
-            },
+        cards.forEach((card, i) => {
+            gsap.from(card, {
+                y: 30,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power3.out",
+                delay: i * 0.06,
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                },
+            });
         });
     }, { scope: sectionRef });
 
+
     return (
-        <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-6 overflow-x-hidden">
             <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>

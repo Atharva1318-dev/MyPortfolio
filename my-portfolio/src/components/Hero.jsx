@@ -49,7 +49,7 @@ export default function Hero({ darkMode }) {
     }, []);
 
     return (
-        <div id="home" className="min-h-screen overflow-x-hidden pt-20 lg:pt-0 flex items-center justify-center">
+        <div id="home" className="min-h-screen overflow-x-hidden py-12  flex items-center justify-center">
             <div className="container mx-auto px-4 lg:px-5 py-4">
                 <div className="grid lg:grid-cols-2 gap-y-10 gap-x-8 lg:gap-x-16 xl:gap-x-24 items-center">
                     {/* Content Section */}
@@ -103,7 +103,7 @@ export default function Hero({ darkMode }) {
                                     <a href="#projects">
                                         View My Work
                                     </a>
-                                    <i className="fa-solid fa-laptop-code ml-2.5"></i>
+                                    <i className={`fa-solid fa-laptop-code ml-2.5`}></i>
                                 </span>
                             </button>
                             <button type="button" className={`flex flex-row items-center h-12 px-5 py-2 rounded-xl border border-indigo-950/50 ${darkMode
