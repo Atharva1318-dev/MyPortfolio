@@ -103,7 +103,7 @@ export default function Hero({ darkMode }) {
                                     <a href="#projects">
                                         View My Work
                                     </a>
-                                    <i className={`fa-solid fa-laptop-code ml-2.5`}></i>
+                                    <i className={`fa-solid fa-laptop-code ml-2.5 ${darkMode ? "text-green-400" : "text-slate-600"}`}></i>
                                 </span>
                             </button>
                             <button type="button" className={`flex flex-row items-center h-12 px-5 py-2 rounded-xl border border-indigo-950/50 ${darkMode
