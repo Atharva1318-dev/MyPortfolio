@@ -66,7 +66,7 @@ export default function Hero({ darkMode }) {
                         </div>
 
                         {/* Typewriter Sub-heading */}
-                        <div className={`text-2xl sm:text-3xl xl:text-5xl font-semibold flex items-center justify-center lg:justify-start gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                        <div className={`text-xl sm:text-3xl xl:text-5xl font-semibold flex items-center justify-start lg:justify-start gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                             <span className={`${darkMode ? "text-green-400" : "text-green-600"}`}>&gt;</span>
                             <span className="min-h-[40px] sm:min-h-[48px]">
                                 <Typewriter
