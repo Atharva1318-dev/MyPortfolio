@@ -135,7 +135,7 @@ export default function MyProjects({ darkMode }) {
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} id="projects" className="min-h-screen py-16 px-4 sm:px-6 lg:px-7 overflow-x-hidden">
+        <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 My Projects
             </h1>
@@ -149,7 +149,7 @@ export default function MyProjects({ darkMode }) {
 
 
             {/* Projects Grid */}
-            <div className="projects-grid max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-9">
+            <div className="projects-grid max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                 {projectsData.map((project, index) => (
                     <ProjectCard
                         key={index}

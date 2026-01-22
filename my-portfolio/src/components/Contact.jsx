@@ -121,9 +121,9 @@ export default function ContactMe({ darkMode }) {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
                     {/* Contact Info */}
-                    <div className="space-y-7">
+                    <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
                         <div
                             className={`mx-auto rounded-2xl p-4 border transition-all duration-300 ${darkMode
                                 ? "bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] border-gray-700 hover:border-gray-600"
@@ -134,13 +134,13 @@ export default function ContactMe({ darkMode }) {
                                 {"Let's Connect"}
                             </h3>
 
-                            <div className="space-y-6">
+                            <div className="space-y-7">
                                 <div className="flex items-center space-x-4 group">
                                     <div
-                                        className={`w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300  text-2xl ${darkMode ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white" : "bg-blue-50 text-blue-600"
+                                        className={`w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${darkMode ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white" : "bg-blue-50 text-blue-600"
                                             }`}
                                     >
-                                        <Mail />
+                                        <Mail size={24} />
                                     </div>
                                     <div>
                                         <p className={`text-sm ${darkMode ? "text-gray-400" : "text-slate-600"}`}>Email</p>

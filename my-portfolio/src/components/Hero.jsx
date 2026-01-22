@@ -49,27 +49,26 @@ export default function Hero({ darkMode }) {
     }, []);
 
     return (
-        <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-0 flex items-center">
+        <div id="home" className="min-h-screen overflow-x-hidden pt-20 lg:pt-0 flex items-center justify-center">
             <div className="container mx-auto px-4 lg:px-5 py-4">
-                <div className="grid lg:grid-cols-2 gap-y-12 gap-x-16 items-center">
-
+                <div className="grid lg:grid-cols-2 gap-y-10 gap-x-8 lg:gap-x-16 xl:gap-x-24 items-center">
                     {/* Content Section */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
 
                         {/* Name Block */}
                         <div className="flex flex-col leading-none select-none">
-                            <h1 className={`text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight ${darkMode ? "text-white" : "text-gray-900"}`}>
+                            <h1 className={`text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold tracking-tight ${darkMode ? "text-white" : "text-gray-900"}`}>
                                 ATHARVA
                             </h1>
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text pb-2">
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold tracking-tight bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text pb-2">
                                 JADHAV
                             </h1>
                         </div>
 
                         {/* Typewriter Sub-heading */}
-                        <div className={`text-2xl md:text-3xl xl:text-4xl font-semibold flex items-center gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                        <div className={`text-2xl sm:text-3xl xl:text-5xl font-semibold flex items-center justify-center lg:justify-start gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                             <span className={`${darkMode ? "text-green-400" : "text-green-600"}`}>&gt;</span>
-                            <span className="min-h-[40px]">
+                            <span className="min-h-[40px] sm:min-h-[48px]">
                                 <Typewriter
                                     words={["Full Stack Dev", "Aspiring Software Engineer", "CSE @ TSEC"]}
                                     loop={Infinity}
@@ -84,7 +83,7 @@ export default function Hero({ darkMode }) {
                         </div>
 
                         {/* Description */}
-                        <div className={`text-md md:text-lg leading-relaxed max-w-xl ${darkMode ? "text-gray-400" : "text-slate-700"}`}>
+                        <div className={`text-base sm:text-md md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 ${darkMode ? "text-gray-400" : "text-slate-700"}`}>
                             Building scalable <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>full-stack</span> web applications with <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>React</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Next.js</span>, and <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>Node.js</span>.
                             <br className="hidden md:block" />
                             Experienced with <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>PostgreSQL</span>, <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>MongoDB</span>, and integrating <span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}>AI-powered solutions</span><span className={`font-medium ${darkMode ? "text-blue-400" : "text-blue-600"}`}></span> for smarter applications.
@@ -124,14 +123,14 @@ export default function Hero({ darkMode }) {
                     </div>
 
                     {/* Profile Image Section */}
-                    <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center">
+                    <div ref={rightGsap} className="order-1 lg:order-2 flex justify-center lg:justify-center items-center h-full">
                         <div className="relative">
                             <div
                                 ref={glowRef}
                                 className={`absolute inset-0 blur-[60px] rounded-full -z-10 ${darkMode ? "bg-indigo-600/25" : "bg-green-400/20"
                                     }`}
                             />
-                            <div className="w-80 h-75 md:w-90 md:h-85 lg:w-full lg:h-95 p-2" ref={avatarRef}>
+                            <div className="w-full h-full p-2" ref={avatarRef}>
                                 <div className={`w-full h-full transform scale-112 drop-shadow-sm ${darkMode ? "drop-shadow-indigo-600" : "drop-shadow-sky-300"}`}>
                                     <img
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
@@ -145,7 +144,7 @@ export default function Hero({ darkMode }) {
                                 ? "bg-black/60 border-green-500/30 text-green-400"
                                 : "bg-white/80 border-green-200 text-green-600"
                                 }`}>
-                                <span className="font-mono text-md md:text-lg font-bold tracking-tighter">{"</>"}</span>
+                                <span className="font-mono text-lg xl:text-2xl font-bold tracking-tighter">{"</>"}</span>
                             </div>
                         </div>
                     </div>
