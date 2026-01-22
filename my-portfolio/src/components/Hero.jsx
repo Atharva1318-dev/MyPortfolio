@@ -50,7 +50,7 @@ export default function Hero({ darkMode }) {
 
     return (
         <div id="home" className="min-h-screen overflow-x-hidden pt-8 lg:pt-0 flex items-center">
-            <div className="container mx-auto px-4 lg:px-5 py-6">
+            <div className="container mx-auto px-4 lg:px-5 py-4">
                 <div className="grid lg:grid-cols-2 gap-y-12 gap-x-16 items-center">
 
                     {/* Content Section */}

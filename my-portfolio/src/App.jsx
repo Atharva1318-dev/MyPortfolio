@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div
-      className={`w-full min-h-screen overflow-x-hidden bg-gradient-to-br ${darkMode
+      className={`w-full min-h-screen bg-gradient-to-br ${darkMode
         ? "from-black to-indigo-950"
         : "from-blue-50 via-white to-indigo-50"
         }`}
