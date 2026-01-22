@@ -103,7 +103,7 @@ export default function About({ darkMode }) {
                                 <Users className="mb-3 text-blue-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Team Work</h4>
                                 <p className={`text-sm md:text-md ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                                    Honed collaboration skills by participating in hackathons and seeking internship opportunities in agile environments.
+                                    While I haven't done a formal internship yet and is currently seeking one, I've honed collaboration skills by participating in hackathons.
                                 </p>
                             </div>
 
