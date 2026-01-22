@@ -45,12 +45,14 @@ function App() {
       <FloatingLogos darkMode={darkMode}></FloatingLogos>
       <div className="relative z-10 min-h-screen hero-gradient transition-colors">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Hero darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Education darkMode={darkMode} />
-        <Skills darkMode={darkMode} />
-        <Project darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <main className="overflow-x-hidden">
+          <Hero darkMode={darkMode} />
+          <About darkMode={darkMode} />
+          <Education darkMode={darkMode} />
+          <Skills darkMode={darkMode} />
+          <Project darkMode={darkMode} />
+          <Contact darkMode={darkMode} />
+        </main>
       </div>
     </div>
   );

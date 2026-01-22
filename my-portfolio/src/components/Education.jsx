@@ -39,30 +39,26 @@ export default function EducationTimeline({ darkMode }) {
     const timelineRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from(".timeline-entry", {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: timelineRef.current,
-                start: "top 75%",
-                toggleActions: "play none none reverse"
-            },
-        });
+        const items = gsap.utils.toArray(".timeline-entry");
 
-        gsap.utils.toArray(".timeline-entry").forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-                gsap.to(el, { scale: 1.01, duration: 0.3, ease: "power2.out" }); // Less subtle scale
-            });
-            el.addEventListener("mouseleave", () => {
-                gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" });
+        items.forEach((el) => {
+            gsap.from(el, {
+                y: 24,
+                opacity: 0,
+                duration: 0.6,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                },
             });
         });
     }, []);
 
+
     return (
-        <section id="education" className="px-4 sm:px-6 md:px-8 lg:px-12 py-12 overflow-hidden w-full">
+        <section id="education" className="px-4 sm:px-6 md:px-8 lg:px-12 py-12 overflow-x-hidden w-full">
             <h1 className={`text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 ${darkMode ? "text-green-400" : "text-green-600"}`}>
                 Education
             </h1>
