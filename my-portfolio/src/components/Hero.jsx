@@ -51,7 +51,7 @@ export default function Hero({ darkMode }) {
     return (
         <div id="home" className="min-h-screen overflow-x-hidden py-12  flex items-center justify-center">
             <div className="container mx-auto px-4 lg:px-5 py-4">
-                <div className="grid lg:grid-cols-2 gap-y-10 gap-x-8 lg:gap-x-16 xl:gap-x-24 items-center">
+                <div className="grid lg:grid-cols-2 gap-y-9 gap-x-8 lg:gap-x-16 xl:gap-x-24 items-center">
                     {/* Content Section */}
                     <div ref={leftGsap} className="order-2 lg:order-1 space-y-6 pt-6">
 
@@ -66,7 +66,7 @@ export default function Hero({ darkMode }) {
                         </div>
 
                         {/* Typewriter Sub-heading */}
-                        <div className={`text-xl sm:text-3xl xl:text-5xl font-semibold flex items-center justify-start lg:justify-start gap-3 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                        <div className={`text-xl sm:text-3xl xl:text-5xl font-semibold flex items-center justify-start lg:justify-start gap-1.5 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                             <span className={`${darkMode ? "text-green-400" : "text-green-600"}`}>&gt;</span>
                             <span className="min-h-[40px] sm:min-h-[48px]">
                                 <Typewriter
@@ -103,7 +103,7 @@ export default function Hero({ darkMode }) {
                                     <a href="#projects">
                                         View My Work
                                     </a>
-                                    <i className={`fa-solid fa-laptop-code ml-2.5 ${darkMode ? "text-green-400" : "text-slate-600"}`}></i>
+                                    <i className={`fa-solid fa-laptop-code ml-2.5 ${darkMode ? "text-green-100" : "text-slate-600"}`}></i>
                                 </span>
                             </button>
                             <button type="button" className={`flex flex-row items-center h-12 px-5 py-2 rounded-xl border border-indigo-950/50 ${darkMode
@@ -117,7 +117,7 @@ export default function Hero({ darkMode }) {
                                 >
                                     Resume
                                 </a>
-                                <FileText height={18} width={18} className={`ml-2 ${darkMode ? "text-green-400" : "text-slate-600"}`} />
+                                <FileText height={18} width={18} className={`ml-2 ${darkMode ? "text-green-100" : "text-slate-600"}`} />
                             </button>
                         </div>
                     </div>

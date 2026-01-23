@@ -57,7 +57,7 @@ export default function About({ darkMode }) {
                             }`}></div>
 
                         {/* Main Image Container */}
-                        <div className={`relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[480px] xl:h-[480px] rounded-2xl overflow-hidden border-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:rotate-[0.4deg] ${darkMode
+                        <div className={`relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[480px] xl:h-[480px] rounded-2xl overflow-hidden border-[2px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:rotate-[0.4deg] ${darkMode
                             ? "border-gray-700 bg-gray-800"
                             : "border-white bg-white"
                             }`}>
@@ -89,7 +89,7 @@ export default function About({ darkMode }) {
                         {/* 2. Attributes Grid - The "Bento" Style */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
 
-                            <div className={`p-3 lg:p-4 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-green-500/50" : "bg-white border-gray-200 shadow-sm"
+                            <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-green-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Code2 className="mb-3 text-green-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Full Stack</h4>
@@ -98,7 +98,7 @@ export default function About({ darkMode }) {
                                 </p>
                             </div>
 
-                            <div className={`p-3 lg:p-4 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-blue-500/50" : "bg-white border-gray-200 shadow-sm"
+                            <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-blue-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Users className="mb-3 text-blue-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Team Work</h4>
@@ -107,7 +107,7 @@ export default function About({ darkMode }) {
                                 </p>
                             </div>
 
-                            <div className={`p-3 lg:p-4 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-pink-500/50" : "bg-white border-gray-200 shadow-sm"
+                            <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-pink-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Palette className="mb-3 text-pink-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Beyond Code</h4>
@@ -116,7 +116,7 @@ export default function About({ darkMode }) {
                                 </p>
                             </div>
 
-                            <div className={`p-3 lg:p-4 rounded-2xl border transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-yellow-500/50" : "bg-white border-gray-200 shadow-sm"
+                            <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-yellow-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Trophy className="mb-3 text-yellow-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>The Goal</h4>
