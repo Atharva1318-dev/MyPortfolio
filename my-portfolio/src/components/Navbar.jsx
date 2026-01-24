@@ -192,7 +192,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     ${darkMode
                     ? 'bg-black/50 border-b-indigo-700 border-x-indigo-900 border-t-indigo-950 backdrop-blur-md shadow-2xl'
                     : 'bg-white/80 border-gray-200 shadow-lg shadow-gray-200/50 backdrop-blur-xl'} 
-    rounded-2xl mx-2 px-3 py-2 md:py-3.5 flex items-center justify-between`}
+    rounded-2xl mx-2 px-3 py-3 md:py-3.5 flex items-center justify-between`}
         >
             {/* Left: Name */}
             <div className="nav-links flex-1">
