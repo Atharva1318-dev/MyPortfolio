@@ -37,12 +37,12 @@ function App() {
 
   return (
     <div
-      className={`w-full min-h-screen transition-colors duration-500 ${darkMode
+      className={`w-full min-h-screen transition-colors duration-290 ${darkMode
         ? "bg-gradient-to-br from-black to-indigo-950"
         : "bg-[#FAFAFA]" // Ultra clean off-white background
         }`}
     >
-      {/* Light Mode ambient background blobs */}
+
       {!darkMode && (
         <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-200/30 blur-[100px]" />

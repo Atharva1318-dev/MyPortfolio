@@ -38,7 +38,7 @@ const projectsData = [
         videoSrc: "https://res.cloudinary.com/dkpgnq7ym/video/upload/v1764311987/Sih_github_video_qfxrvi.mp4",
         liveLink: "", // Empty or missing link triggers disabled state automatically
         githubLink: "https://github.com/Aarjav05/sih_2025/tree/main",
-        playbackRate: 1.05,
+        playbackRate: 1.15,
         isDisabled: true
     },
     {
