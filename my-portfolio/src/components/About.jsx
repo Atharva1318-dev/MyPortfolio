@@ -57,12 +57,12 @@ export default function About({ darkMode }) {
                             }`}></div>
 
                         {/* Main Image Container */}
-                        <div className={`relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[480px] xl:h-[480px] rounded-2xl overflow-hidden border-[2px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:rotate-[0.4deg] ${darkMode
+                        <div className={`relative z-10 w-64 h-64 sm:w-75 sm:h-75 md:w-95 md:h-95 lg:w-[400px] lg:h-[400px] xl:w-[440px] xl:h-[440px] rounded-2xl overflow-hidden border-[2px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] group-hover:rotate-[0.4deg] ${darkMode
                             ? "border-gray-700 bg-gray-800"
                             : "border-white bg-white"
                             }`}>
                             <img
-                                src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752989690/me_xltawb.jpg"
+                                src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1769229580/IMG-20240306-WA0102-02-01_eci3ft.jpg"
                                 alt="Atharva Jadhav"
                                 className="w-full h-full object-cover"
                             />

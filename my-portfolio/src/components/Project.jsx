@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
 
-// Consolidated Data
 const projectsData = [
     {
         title: "VectorAI",
@@ -12,9 +11,9 @@ const projectsData = [
         category: "Fullstack | AI",
         description: "A comprehensive career coaching platform helping professionals navigate paths using Google's Gemini AI.",
         features: [
-            "AI resume feedback & scoring",
-            "Auto cover letter generation",
-            "Technical revision quizzes"
+            "AI-powered resume & cover letter generation",
+            "Automated weekly industry insight updates",
+            "Mock interview quizzes & Cashfree payments"
         ],
         tech: ["Next.js", "Gemini AI", "Tailwind", "PostgreSQL"],
         moreTech: 3,
@@ -30,9 +29,9 @@ const projectsData = [
         category: "AI | Vision",
         description: "AI-driven solution for rural schools to simplify daily attendance using group photos.",
         features: [
-            "95%+ accuracy facial recognition",
-            "Role-based dashboards",
-            "Geo-fencing validation"
+            "One-shot group photo facial recognition",
+            "Offline-first design with auto-sync",
+            "Role-based access & SMS alerts"
         ],
         tech: ["Flask", "OpenCV", "PostgreSQL", "Twilio"],
         moreTech: 2,
@@ -48,9 +47,9 @@ const projectsData = [
         category: "Fullstack | Travel",
         description: "Airbnb-inspired travel booking platform for seamless property management and booking.",
         features: [
-            "Map-based property search",
-            "Review and rating system",
-            "Secure user authentication"
+            "Comprehensive property listing management",
+            "Interactive maps for location search",
+            "User-driven review & rating system"
         ],
         tech: ["React", "Express.js", "MongoDB", "Mapbox"],
         moreTech: 4,
@@ -66,9 +65,9 @@ const projectsData = [
         category: "Fullstack | EdTech",
         description: "Unified digital campus platform streamlining essential services for students and faculty.",
         features: [
-            "Centralized notice board",
-            "Secure JWT authentication",
-            "SMS alerts via Twilio"
+            "Digital railway concessions & canteen ordering",
+            "Shared e-calendar for event management",
+            "Integrated in-browser code editor"
         ],
         tech: ["MERN Stack", "Tailwind", "MUI", "JWT"],
         moreTech: 2,
@@ -84,9 +83,9 @@ const projectsData = [
         category: "Frontend | UX",
         description: "Reimagined landing page for Razer transforming the site into an immersive brand experience.",
         features: [
-            "Scroll-triggered animations",
-            "High-fidelity brand aesthetic",
-            "Fully responsive UI"
+            "Immersive, high-fidelity gaming aesthetic",
+            "Scroll-triggered GSAP animations",
+            "Fully responsive modern interface"
         ],
         tech: ["React", "GSAP", "Tailwind", "Vite"],
         moreTech: 1,

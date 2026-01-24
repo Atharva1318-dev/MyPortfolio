@@ -64,7 +64,7 @@ export default function FloatingLogos({ darkMode }) {
                             top: `${top}%`,
                             left: `${left}%`,
                             borderRadius: "12.5px",
-                            opacity: darkMode ? 0.275 : 0.38,
+                            opacity: darkMode ? 0.29 : 0.38,
                         }}
                     />
                 );
