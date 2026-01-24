@@ -130,7 +130,7 @@ export default function Hero({ darkMode }) {
                                 className={`absolute inset-0 blur-[60px] rounded-full -z-10 ${darkMode ? "bg-indigo-600/25" : "bg-green-400/20"
                                     }`}
                             />
-                            <div className="w-full h-full p-2" ref={avatarRef}>
+                            <div className="w-full h-full p-2 lg:p-4.5" ref={avatarRef}>
                                 <div className={`w-full h-full transform scale-112 drop-shadow-sm ${darkMode ? "drop-shadow-indigo-600" : "drop-shadow-sky-300"}`}>
                                     <img
                                         src="https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752415760/Firefly_Modern_flat_vector_illustration_of_a_young_computer_engineering_student_working_on_a_141617-Photoroom_jec7l6.png"
