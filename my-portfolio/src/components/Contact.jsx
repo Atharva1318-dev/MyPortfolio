@@ -127,7 +127,7 @@ export default function ContactMe({ darkMode }) {
                         <div
                             className={`mx-auto rounded-2xl p-4 border transition-all duration-300 ${darkMode
                                 ? "bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] border-gray-700 hover:border-gray-600"
-                                : "bg-white/80 backdrop-blur-sm border-blue-100/50 shadow-lg shadow-blue-100/20 hover:bg-white/90 hover:shadow-xl hover:shadow-blue-200/30"
+                                : "bg-white/80 backdrop-blur-xs border-blue-100/50 shadow-lg shadow-blue-100/20 hover:bg-white/90 hover:shadow-xl hover:shadow-blue-200/30"
                                 }`}
                         >
                             <h3 className={`text-2xl font-semibold mb-6 ${darkMode ? "text-white" : "text-green-500"}`}>
@@ -219,7 +219,7 @@ export default function ContactMe({ darkMode }) {
                     <div
                         className={`rounded-2xl p-4 border transition-colors duration-300 ${darkMode
                             ? "bg-[linear-gradient(-135deg,_rgba(0,0,0,0.6),_rgba(49,46,129,0.8))] border-gray-700 hover:border-gray-600"
-                            : "bg-gradient-to-br from-white/90 to-blue-50/50 backdrop-blur-sm border-indigo-100/60 shadow-lg shadow-indigo-100/25"
+                            : "bg-gradient-to-br from-white/90 to-blue-50/50 border-indigo-100/60 backdrop-blur-xs shadow-lg shadow-indigo-100/25"
                             }`}
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">

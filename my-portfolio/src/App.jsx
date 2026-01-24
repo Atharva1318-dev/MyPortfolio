@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3400); // adjust time as needed
+    }, 3350); // adjust time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -37,11 +37,19 @@ function App() {
 
   return (
     <div
-      className={`w-full min-h-screen bg-gradient-to-br ${darkMode
-        ? "from-black to-indigo-950"
-        : "from-blue-50 via-white to-indigo-50"
+      className={`w-full min-h-screen transition-colors duration-500 ${darkMode
+        ? "bg-gradient-to-br from-black to-indigo-950"
+        : "bg-[#FAFAFA]" // Ultra clean off-white background
         }`}
     >
+      {/* Light Mode ambient background blobs */}
+      {!darkMode && (
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-200/30 blur-[100px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-200/30 blur-[100px]" />
+          <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full bg-green-200/20 blur-[100px]" />
+        </div>
+      )}
       <FloatingLogos darkMode={darkMode}></FloatingLogos>
       <div className="relative z-10 min-h-screen hero-gradient transition-colors">
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />

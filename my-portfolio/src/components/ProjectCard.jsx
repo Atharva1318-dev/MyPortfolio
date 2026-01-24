@@ -12,17 +12,17 @@ export default function ProjectCard({ project, darkMode }) {
         }
     }, [project.playbackRate]);
 
-    // Check if demo should be disabled (explicit flag OR missing link)
     const isDemoDisabled = project.isDisabled || !project.liveLink || project.liveLink === "#";
 
-    // Theme colors
+
     const cardBg = darkMode
         ? "bg-slate-900/60 backdrop-blur-md border-white/10 hover:border-indigo-500/50 hover:shadow-indigo-500/10"
-        : "bg-white border-gray-200 hover:border-indigo-500/30 hover:shadow-xl";
+        : "bg-white border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(79,70,229,0.15)] hover:border-indigo-100";
 
-    const textColor = darkMode ? "text-gray-400" : "text-gray-600";
-    const titleColor = darkMode ? "text-white" : "text-gray-900";
+    const textColor = darkMode ? "text-gray-400" : "text-slate-500";
+    const titleColor = darkMode ? "text-white" : "text-slate-900";
     const featureIconColor = darkMode ? "text-indigo-400" : "text-indigo-600";
+    // Light mode pills: Distinct light purple bg
     const pillBg = darkMode ? "bg-indigo-500/10 text-indigo-300 border-indigo-500/20" : "bg-indigo-50 text-indigo-700 border-indigo-100";
 
     return (

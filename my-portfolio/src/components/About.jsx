@@ -53,7 +53,7 @@ export default function About({ darkMode }) {
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
                     <div ref={picRef} className="flex justify-center items-center relative group">
                         {/* Abstract Background Decoration */}
-                        <div className={`absolute inset-0 rounded-3xl blur-[40px] opacity-40 group-hover:opacity-50 transition-opacity duration-500 ${darkMode ? "bg-indigo-900" : "bg-blue-400"
+                        <div className={`absolute inset-0 rounded-3xl blur-[40px] opacity-40 group-hover:opacity-50 transition-opacity duration-500 ${darkMode ? "bg-indigo-900" : "bg-blue-200"
                             }`}></div>
 
                         {/* Main Image Container */}
@@ -68,36 +68,37 @@ export default function About({ darkMode }) {
                             />
 
                             {/* Overlay Gradient for depth */}
-                            <div className={`absolute inset-0 bg-gradient-to-t ${darkMode ? "from-black/60 via-transparent" : "from-blue-900/30 via-transparent"
+                            <div className={`absolute inset-0 bg-gradient-to-t ${darkMode ? "from-black/60 via-transparent" : "from-blue-100/5 via-transparent"
                                 } to-transparent opacity-60`}></div>
                         </div>
                     </div>
 
                     {/* Content Side */}
                     <div ref={abtRef} className="self-start space-y-6">
-
-                        {/* 1. Main Intro - Clean Text (No Box) for better readability */}
                         <div className="pl-3 border-l-4 border-green-500">
-                            <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${darkMode ? "text-white" : "text-gray-900"}`}>
+                            <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${darkMode ? "text-white" : "text-slate-800"}`}>
                                 Hello, I'm <span className="text-green-500">Atharva.</span>
                             </h3>
-                            <p className={`text-lg md:text-xl leading-relaxed ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
+                            <p className={`text-lg md:text-xl leading-relaxed ${darkMode ? "text-gray-300" : "text-slate-600"}`}>
                                 A third-year Computer Engineering student at <span className="font-semibold text-blue-500">TSEC Mumbai</span>.
                             </p>
                         </div>
 
-                        {/* 2. Attributes Grid - The "Bento" Style */}
+                        {/* Attributes Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-
-                            <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-green-500/50" : "bg-white border-gray-200 shadow-sm"
+                            {/* Card 1 */}
+                            <div className={`p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${darkMode
+                                ? "bg-white/5 border-white/10 hover:border-green-500/50"
+                                : "bg-white border-gray-100 shadow-xl shadow-green-100/50 hover:border-green-200"
                                 }`}>
                                 <Code2 className="mb-3 text-green-500" size={25} />
-                                <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Full Stack</h4>
-                                <p className={`text-sm md:text-md ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                                    Evolved from MERN stack to building scalable apps with Next.js, PostgreSQL & Prisma, actively exploring AI integrations in my projects.
+                                <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-slate-800"}`}>Full Stack</h4>
+                                <p className={`text-sm md:text-md ${darkMode ? "text-gray-400" : "text-slate-500"}`}>
+                                    Evolved from MERN stack to building scalable apps with Next.js, PostgreSQL & Prisma.
                                 </p>
                             </div>
 
+                            {/* Card 2 */}
                             <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-blue-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Users className="mb-3 text-blue-500" size={25} />
@@ -107,6 +108,8 @@ export default function About({ darkMode }) {
                                 </p>
                             </div>
 
+
+                            {/* Card 3 */}
                             <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-pink-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Palette className="mb-3 text-pink-500" size={25} />
@@ -116,6 +119,8 @@ export default function About({ darkMode }) {
                                 </p>
                             </div>
 
+
+                            {/* Card 4 */}
                             <div className={`p-3 lg:p-4 rounded-2xl border backdrop-blur-sm transition-all hover:-translate-y-1 ${darkMode ? "bg-white/5 border-white/10 hover:border-yellow-500/50" : "bg-white border-gray-200 shadow-sm"
                                 }`}>
                                 <Trophy className="mb-3 text-yellow-500" size={25} />
