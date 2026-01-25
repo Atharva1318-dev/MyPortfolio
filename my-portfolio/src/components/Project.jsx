@@ -107,20 +107,19 @@ export default function MyProjects({ darkMode }) {
 
         cards.forEach((card, i) => {
             gsap.from(card, {
-                y: 30,
+                y: 45,
                 opacity: 0,
-                duration: 0.7,
-                ease: "power3.out",
-                delay: i * 0.06,
+                duration: 0.95,
+                ease: "power4.out",
+                delay: i * 0.07,
                 scrollTrigger: {
                     trigger: card,
-                    start: "top 85%",
+                    start: "top 82%",
                     toggleActions: "play none none reverse",
                 },
             });
         });
     }, { scope: sectionRef });
-
 
     return (
         <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-6 overflow-x-hidden">

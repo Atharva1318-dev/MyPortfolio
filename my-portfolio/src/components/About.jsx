@@ -87,7 +87,7 @@ export default function About({ darkMode }) {
                         {/* Attributes Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                             {/* Card 1 */}
-                            <div className={`p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${darkMode
+                            <div className={`p-4 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 ${darkMode
                                 ? "bg-white/5 border-white/10 hover:border-green-500/50"
                                 : "bg-white border-gray-100 shadow-xl shadow-green-100/50 hover:border-green-200"
                                 }`}>
