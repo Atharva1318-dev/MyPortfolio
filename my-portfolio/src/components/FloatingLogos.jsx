@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
 let reactLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604990/react_oe0be6.png";
 let nextLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1767245070/nextjs_oeinga.png";
@@ -19,7 +21,8 @@ let gitLogo = "https://res.cloudinary.com/dkpgnq7ym/image/upload/v1752604988/git
 const logos = [reactLogo, javaLogo, nextLogo, htmlLogo, javaLogo, gitLogo, gsapLogo, pythonLogo, pythonLogo, reactLogo, jsLogo, gitLogo, cssLogo, mongoLogo, javaLogo, tailwindLogo, reactLogo, jsLogo, nextLogo, cssLogo, mongoLogo, javaLogo, reactLogo, htmlLogo, cssLogo, mongoLogo, nextLogo, javaLogo, tailwindLogo, bootLogo, mongoLogo, nodeLogo, javaLogo, tailwindLogo, tailwindLogo, tailwindLogo, bootLogo, javaLogo, reactLogo];
 
 
-export default function FloatingLogos({ darkMode }) {
+export default function FloatingLogos() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const containerRef = useRef(null);
 
     useGSAP(() => {
@@ -49,7 +52,11 @@ export default function FloatingLogos({ darkMode }) {
     }, { scope: containerRef });
 
     return (
-        <div className="min-h-screen fixed inset-0 z-0 overflow-hidden" ref={containerRef}>
+        <div
+            ref={containerRef}
+            className="fixed inset-0 z-0 overflow-hidden pointer-events-none"
+        >
+
             {logos.map((src, i) => {
                 const top = Math.random() * 100;
                 const left = Math.random() * 100;

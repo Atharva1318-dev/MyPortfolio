@@ -1,7 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { ExternalLink, Github, Zap, Calendar, Ban } from "lucide-react";
 
-export default function ProjectCard({ project, darkMode }) {
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
+
+export default function ProjectCard({ project }) {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const videoRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
 

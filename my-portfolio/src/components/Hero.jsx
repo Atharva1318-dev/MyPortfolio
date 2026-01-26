@@ -3,8 +3,11 @@ import { Typewriter } from "react-simple-typewriter";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FileText } from "lucide-react";
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
-export default function Hero({ darkMode }) {
+export default function Hero() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const avatarRef = useRef(null);
     const leftGsap = useRef(null);
     const rightGsap = useRef(null);

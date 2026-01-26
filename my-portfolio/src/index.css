@@ -19,7 +19,6 @@ h6 {
   letter-spacing: 0.01em;
 }
 
-/* Body: Plus Jakarta Sans (Modern, fresh, geometric) */
 p,
 span,
 a,
@@ -31,10 +30,9 @@ textarea {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  line-height: 1.6; /* Improved readability for body text */
+  line-height: 1.6; 
 }
 
-/* Headings: Titillium Web (Technical, sharp) */
 h1,
 .heading {
   font-family: "Titillium Web", sans-serif;

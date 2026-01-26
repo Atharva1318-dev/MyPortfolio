@@ -12,7 +12,13 @@ import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import "./Navbar.css";
 
-export default function Navbar({ darkMode, setDarkMode }) {
+import { useContext } from 'react';
+import { darkModeContext } from '../context/ThemeContext';
+
+export default function Navbar() {
+    const obj = useContext(darkModeContext);
+    const darkMode = obj.darkMode;
+    const setDarkMode = obj.setDarkMode;
 
     useGSAP(() => {
         gsap.from('.nav-links', {

@@ -3,6 +3,8 @@ import { Code, Palette, Server, Wrench, ChevronDown } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
 const skillsData = {
     Languages: {
@@ -50,7 +52,8 @@ const skillsData = {
     },
 };
 
-export default function SkillsSection({ darkMode }) {
+export default function SkillsSection() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const [expandedCards, setExpandedCards] = useState([]);
     const containerRef = useRef(null);
 

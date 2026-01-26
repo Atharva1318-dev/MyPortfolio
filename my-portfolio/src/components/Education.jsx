@@ -12,6 +12,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const educationData = [
@@ -35,7 +38,8 @@ const educationData = [
     },
 ];
 
-export default function EducationTimeline({ darkMode }) {
+export default function EducationTimeline() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const timelineRef = useRef(null);
 
     useGSAP(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FloatingLogos from "./components/FloatingLogos";
@@ -9,14 +9,16 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
+import { darkModeContext } from "./context/ThemeContext";
+
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const { darkMode, setDarkMode } = useContext(darkModeContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3350); // adjust time as needed
+    }, 3350);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,10 +38,11 @@ function App() {
   }
 
   return (
+
     <div
       className={`w-full min-h-screen transition-colors duration-290 ${darkMode
         ? "bg-gradient-to-br from-black to-indigo-950"
-        : "bg-[#FAFAFA]" // Ultra clean off-white background
+        : "bg-[#FAFAFA]"
         }`}
     >
 
@@ -50,16 +53,16 @@ function App() {
           <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full bg-green-200/20 blur-[100px]" />
         </div>
       )}
-      <FloatingLogos darkMode={darkMode}></FloatingLogos>
+      <FloatingLogos></FloatingLogos>
       <div className="relative z-10 min-h-screen hero-gradient transition-colors">
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Navbar />
         <main className="overflow-x-hidden">
-          <Hero darkMode={darkMode} />
-          <About darkMode={darkMode} />
-          <Education darkMode={darkMode} />
-          <Skills darkMode={darkMode} />
-          <Project darkMode={darkMode} />
-          <Contact darkMode={darkMode} />
+          <Hero />
+          <About />
+          <Education />
+          <Skills />
+          <Project />
+          <Contact />
         </main>
       </div>
     </div>

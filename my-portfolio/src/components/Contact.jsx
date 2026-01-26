@@ -5,8 +5,11 @@ import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Mail } from 'lucide-react';
 import { duration } from "@mui/material/styles";
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
-export default function ContactMe({ darkMode }) {
+export default function ContactMe() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const gsapRef = useRef(null);
     const [formData, setFormData] = useState({
         name: "",

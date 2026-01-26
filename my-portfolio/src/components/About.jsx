@@ -4,9 +4,12 @@ import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Code2, Globe, Palette, Trophy, Users } from "lucide-react"
 import { GlowingEffect } from './ui/glowing-effect';
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
 
-export default function About({ darkMode }) {
+export default function About() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const picRef = useRef(null);
     const abtRef = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
@@ -104,7 +107,7 @@ export default function About({ darkMode }) {
                                 <Users className="mb-3 text-blue-500" size={25} />
                                 <h4 className={`text-lg font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Team Work</h4>
                                 <p className={`text-sm md:text-md ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
-                                    While I haven't done a formal internship yet and is currently seeking one, I've honed collaboration skills by participating in hackathons.
+                                    While I haven't done a formal internship yet and is currently seeking one, I've developed collaboration skills by participating in hackathons.
                                 </p>
                             </div>
 

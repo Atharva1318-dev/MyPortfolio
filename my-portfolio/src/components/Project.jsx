@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import ProjectCard from "./ProjectCard";
+import { useContext } from "react";
+import { darkModeContext } from "../context/ThemeContext";
 
 const projectsData = [
     {
@@ -97,29 +99,38 @@ const projectsData = [
     }
 ];
 
-export default function MyProjects({ darkMode }) {
+export default function MyProjects() {
+    const { darkMode, setDarkMode } = useContext(darkModeContext);
     const sectionRef = useRef(null);
 
-    gsap.registerPlugin(ScrollTrigger);
 
-    useGSAP(() => {
-        const cards = gsap.utils.toArray(".project-card", sectionRef.current);
+    useEffect(
+        () => {
+            gsap.registerPlugin(ScrollTrigger);
+            // const cards = gsap.utils.toArray(".project-card");
 
-        cards.forEach((card, i) => {
-            gsap.from(card, {
-                y: 45,
-                opacity: 0,
-                duration: 0.95,
-                ease: "power4.out",
-                delay: i * 0.07,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 82%",
-                    toggleActions: "play none none reverse",
+            // if (!cards.length) return;
+
+            gsap.fromTo(
+                ".project-card",
+                {
+                    opacity: 0,
+                    y: 60,
                 },
-            });
-        });
-    }, { scope: sectionRef });
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                    ease: "power4.out",
+                    stagger: 0.3,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top 84%",
+                        toggleActions: "play none none reverse",
+                    },
+                }
+            );
+        }, []);
 
     return (
         <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-24 px-4 sm:px-6 lg:px-6 overflow-x-hidden">
@@ -141,7 +152,6 @@ export default function MyProjects({ darkMode }) {
                     <ProjectCard
                         key={index}
                         project={project}
-                        darkMode={darkMode}
                     />
                 ))}
             </div>
